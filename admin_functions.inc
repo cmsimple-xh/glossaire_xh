@@ -362,11 +362,11 @@ function language_choice(){
             : $lang;
 
         $el = file_exists($img)
-            ? tag(
-                'img src="' . $img . '" alt="' . $title . '" title="'
-                . $title . '" class="flag"'
-            )
-            : $title;
+                ? '<img src="' . $img
+                . '" alt="' . $title
+                . '" title="' . $title
+                . '" class="flag">'
+                : $title;
         $t .= '<a href="' . $base_url . $url . '">' . $el . '</a> ';
     }
     return $t;
