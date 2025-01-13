@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Version 2.0 -->
+    <title>USER MANUAL Plugin GLOSSARY</title>
+    <meta content="User manual of Glossary plugin for GuppY v5" name="description" />
+    <link rel="stylesheet" href="help_files/stylesheet.css" type="text/css" />
+    <script src="help_files/generated_toc.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1 style="text-align: center;">Glossaire_XH - User manual</h1>
+      <p style="text-align: center;">Welcome on the user manual of plugin <a href="https://www.f5swn.fr/en/?Plugins/Glossaire"
+
+          target="_blank">Glossaire_XH v2</a> for <a href="http://www.cmsimple-xh.org/"
+
+          title="CMSimple_XH" target="_blank">CMSimple_XH</a> (v<b>1.7.x</b>). <br />
+      </p>
+      <div id="generated-toc"> </div>
+      <div class="pl_icon"><img src="help_files/glossaire_icon.png" alt="Plugin Glossaire_XH"
+
+          title="Plugin Glossaire_XH" /></div>
+      <h2 id="top_page">I - Description</h2>
+      <p><span style="font-weight: bold;">Glossaire_XH</span> can display a
+        definition on mouse over of certain words in your articles and also in
+        newsboxes. This definition may be titled and illustrated.</p>
+      <p>Once configuration validate one first time for the template in used,
+        simply go to the admin and record a first word and its definition.</p>
+      <p>When reading one of your articles, if the word is present in the text,
+        it will display the definition on mouseover, as would a tooltip.</p>
+      <ul>
+        <li>This word appears highlighted with a dotted line (configurable)</li>
+        <li>Number of occurrences is configurable (allowing a definition of the
+          first appearance of the word only, for example)</li>
+        <li>The aspect of the definition displayed is configurable for each
+          template.</li>
+        <li>Work on multilingual site.</li>
+        <li>Recognition of plural (for supported languages).<br />
+          <br />
+          The intervention on the text takes place at the level of the content
+          variable and just before the display of the article. Word lists (one
+          per language) and the associated definitions are stored in text format
+          in the data folder of the plugin.</li>
+      </ul>
+      <h2>II -languages</h2>
+      <p>The plugin can work in all languages supported by CMSimple_XH,</p>
+      <p>its plural detector (let the words created to be recognized when they
+        are plural in the article) currently supports the following languages:
+        Cs, Da, De, Fr, It, Nl, Ru, Sk.</p>
+      <p style="margin-left: 40px;"><span style="font-style: italic;">Danish :
+          Create the word in its indefinite form. Therefore, the plural detector
+          will find its definite form and the plurals (definite and indefinite).
+          Example for a car = bil, the words bilen, biler, bilerne will be also
+          detected.<br />
+          <br />
+          Slovak and Czech : Create the word in its nominative form (basic). The
+          plural detector will try to find other forms and their plural.<br />
+          Only the names are concerned, and all cases are not provided.<br />
+        </span> </p>
+      <p>The administration is available in the following languages (default
+        English):</p>
+      <ul>
+        <li><span style="font-weight: bold;">French</span></li>
+        <li><span style="font-weight: bold;">English</span> (personal
+          translation, tell me the errors that may be present)</li>
+        <li><b>German</b> - translation and german help file provided by <a target="_blank"
+
+            href="https://cmsimplexh.de">Michael Zajusch</a></li>
+        <li><b>Slovak</b> - translation provided by <a target="_blank" href="http://www.cmsimpleforum.com">Tata</a></li>
+        <li><b>Czech</b> - translation provided by <a target="_blank" href="http://oldnema.compsys.cz/en/?Demo_templates">Oldnema</a></li>
+      </ul>
+      <p>To add a new language to this plugin, it requires two conditions :</p>
+      <ul>
+        <li>Translate the language file.<em></em> </li>
+        <li>That I add the plural recognition for the language.</li>
+      </ul>
+      <p>If you wish to use this plugin in a language other than those already
+        proposed, contact me. You can propose me your own translation of
+        language file, thank you.</p>
+      <h3>2.1 - Use in multilingual site</h3>
+      <p>Glossaire_XH respects the philosophy of CMSimple_XH. The plugin
+        interface appears in the language in use (according to the languages
+        supported by the plugin, if not in English) and the words and
+        definitions created are placed in a specific folder of the data folder
+        of the plugin. If your site includes for example two languages, English
+        and German, the words created in English and their definitions are
+        therefore placed in data/en/ of plugin. For German, it will be data/de/.</p>
+      <h2>III - Installation</h2>
+      <p>Transfer the contents of the zip to the root of your site (same level
+        than plugins/ folder).</p>
+      <p>Pay attention to the limitations of your host. OVH, for example,
+        folders must have a = chmod 705 and files 604 (the most permissive for
+        files and scripts being 755). This field must be populated with the
+        number "<span style="font-weight: bold;">705</span>" in the case of OVH.</p>
+      <p>Check this with your FTP software (eg FileZilla).</p>
+      <p><span style="text-decoration: underline;">To use the plugin</span>,
+        simply validate a first configuration (Configuration page) for the
+        template used. The template.htm file of your template will be modified
+        by adding <span style="font-style: italic; font-weight: bold;">init_Glossaire()</span><span
+
+          style="font-style: italic; font-weight: bold;"></span>. A copy of the
+        original file will be performed (template.htm.bak).</p>
+      <p>According to the limitations of your host, the operation may not be
+        possible; In this case you will be prompted to perform this add manually
+        by editing the template.htm file of your template. Add the code bellow
+        before the echo of content() :</p>
+      <pre>&lt;?php init_Glossaire(); ?&gt;</pre>
+      <p>For convenience of automation, the plugin add this code just after the
+        end tag &lt;/head&gt;.</p>
+      <p>It is possible to disable the plugin for a template (Configuration
+        page). When active, a check box is provided for deactivation.</p>
+      <h3>3.1 - Updates</h3>
+      <p>Glossaire_XH is compatible with <span style="font-weight: bold; font-style: italic;">updatecheck</span>
+        plugin (by <a target="_blank" title="updatecheck" href="http://CMSimple.HolgerIrmler.de">Holger
+          Irmler</a>) which allows to indicate to the webmaster if updates are
+        available for installed plugins on the site or for the CMS itself.</p>
+      <h2>IV - Configuration</h2>
+      <p>This page allows you for each template to : </p>
+      <ul>
+        <li><span style="font-weight: bold;">Disable the plugin on your site</span>
+          (underlined words and definitions overview).<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Activate the plugin for the
+            newsboxes</span>.<br />
+          If you want the plugin also works in the text of your newsboxes.<br />
+          <br />
+          <span style="font-weight: bold;"></span></li>
+        <li><span style="font-weight: bold;">Configure the number of occurrences
+            to be replaced in article</span>.<br />
+          Enter a number (eg 1 if you want only the first occurrence of the word
+          appearing in the article is "defined"). If you want all instances be
+          treated, enter <span style="font-weight: bold;">-1</span> (minus sign
+          followed by a number, no spaces) [do not put anything else in this
+          field]<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Determine the display width of the
+            definition. </span>For a long definition (do not forget that the
+          definitions are added at the end of articles, in source), the default
+          width of the display appear insufficient, the displayed frame
+          stretching too high. <br />
+          <br />
+          Two widths are configurable : The first "default" is the width that
+          will be applied to all definitions displayed. 20em normally be fine
+          but you can change this value.<br />
+          <br />
+          Why "em" and not "px" : em is a relative unit that allows resizing
+          text. The definition display and maintain its proportions if the
+          visitor changes the text size displayed by the browser. The second
+          value set at 30em default (you can change it) will be the width of
+          only some definitions provided to check the option at the time of
+          publishing them.<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Determine the aspect of the
+            occurrence in the article</span>. The word will be underlined with a
+          solid line, dashed or dotted lines that you can choose the color.<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Determine the aspect of the
+            definition displayed</span>. An preview of the aspect of the
+          definition allows you to view the choices made immediately.</li>
+      </ul>
+      <p> You'll notice the option to choose a template other than the default.
+        In this case, the page is reloaded with the selected template, allowing
+        you to more easily compare with the definition preview of the right side
+        form (this preview directly shows the settings in the ASPECT part of the
+        configuration). Once the form is validated, the template is still
+        selected and displayed unless you choose another or choose another page.<br />
+        <br />
+        Important: As long as the configuration template has not been validated,
+        the plugin is not working for your visitors. </p>
+      <p>Tip: Make rather short definitions, whatever the field.</p>
+      <h2>V - Words and Definitions</h2>
+      <p>This page allows you to manage the list of words and definitions
+        related thereto.</p>
+      <h3>5.1 - The list of words</h3>
+      <p>It displays existing words, access to their editing or creation of a
+        word and its definition, it also allows to simply delete a word and its
+        definition.</p>
+      <h4>5.1.1 - The filter</h4>
+      <p>Comes in the form of an alphabetical list.<br />
+        If you click on a letter of the filter, the table will be filtered
+        according to the letter and classified in alphabetical order according
+        to the words column.<br />
+      </p>
+      <h4>5.1.2 - Sorting</h4>
+      <p>Each column heading in the table(<span style="font-weight: bold;">Id</span>,
+        <span style="font-weight: bold;">Words</span>) has a link sorting. You
+        can sort the table according to the column of your choice, the title
+        will be highlighted. (Sort alphabetically but abbreviations will be
+        placed first). The dimensions of the table are fixed. When the number of
+        words will be sufficient to exceed the height of the table, you will can
+        browse the list of lines with the mouse wheel or by using the scrallbar
+        to the right. The use of the filter so will reduce the number of rows
+        displayed.</p>
+      <h4>5.1.3 - The list</h4>
+      <p>The list has one column for the id and one for the words. Simply click
+        on a word line to access the edit page (same page than for creation). A
+        check box located at the end of each line is used to select one or more
+        words for delete. Then, a "<span style="font-weight: bold;">Delete</span>"
+        button appears at the bottom of the table, with an indication of the
+        number of selections. Delete a word causes the deletion of its
+        definition.</p>
+      <h3>5.2 - Create word and definition</h3>
+      <p>At the bottom of the list, click "<span style="font-weight: bold;">Create
+          a word</span>".</p>
+      <p>You are now on the "<span style="font-weight: bold;">WORD and
+          DEFINITION</span>" page where you'll write the word, the title of the
+        definition (optional)*, and the definition itself.</p>
+      <p>Regarding the title, this is the title of the definition displayed
+        area. <span style="text-decoration: underline;">*To not have a title
+          area, just leave the field blank.</span></p>
+      <p>An ID is displayed at the top for page. This is the number identifying
+        the word and its definition, it is not editable.</p>
+      <p>In <span style="font-weight: bold;">WORD </span>and<span style="font-weight: bold;">
+          TITLE</span> fields, do not put HTML code or other. Fill in the fields
+        with your keyboard without using <span style="font-style: italic;">copy/paste</span>
+        for example. This is important especially for accents.</p>
+      <p style="margin-left: 40px;"><span style="font-style: italic;">Note: The
+          research to be carried out in the article is not "case sensitive".
+          However, for abbreviations (eg A.B.C.D. or ABCD) and only in this
+          case, the search will ONLY on capital (a.b.c.d. will not be found or
+          abcd)</span>.</p>
+      <p><span style="font-weight: bold;">DEFINITION</span> : The editor
+        (depending on the choice made in the admin of CMSimple_XH) allows you to
+        create the definition. You can place an image (note the definition that
+        will be displayed is not very wide, so use a small image if it will be
+        truncated).</p>
+      <p>The colors (titles and texts and their backgrounds), font, border
+        colors are configurable in Aspect part of <span style="font-weight: bold;">Configuration</span>
+        page.</p>
+      <p>Down just before the submit button, a check box allows to expand the
+        width of displayed definition.</p>
+      <p>Another option allows you to set the comportment of displayed
+        definition during its mouseover. If checked, the definition will stay
+        freeze after cursor mouseover its content. A close button is added in
+        its upper right corner (It will also close if another definition is
+        displayed). Without this option, the definition closes as soon as the
+        cursor is not over.<br />
+        This can be useful if the text contains several links, for example.</p>
+      <p>Once the form is filled, click "<span style="font-weight: bold;">Save</span>"
+        at the bottom.</p>
+      <p>You are now back to the list of words and appears in this one the word
+        you just created.</p>
+      <h3>5.3 - Sound and video</h3>
+      <p>First, it must be borne in mind that if a word is defined in the
+        article posted, the definition is necessarily in the flow of the page
+        (in the end). It is of course obvious that if the word in question is
+        flown but it is there. In case you want to insert an audio or video
+        player, the following problems arise:</p>
+      <ul>
+        <li>How to start playing automatically.</li>
+        <li>How to stop it when the definition closing.</li>
+      </ul>
+      <p>The script glossary can drive a player if it can be controlled by
+        javascript. It automatically calls two functions, one for playing when
+        the definition appears, another stop it when the definition is closed.
+        You will need to create a javascript file named<span style="font-weight: bold;">
+          fonct_util.js</span> and that you put in the js folder of the plugin
+        (plugins/glossaire/js/). It should contain the following functions must
+        be adapted to the player used:<br />
+        <br />
+        For playback : <b>demLect(id)</b><br />
+        To stop : <b>stopLect(id)<br />
+        </b><br />
+        where<span style="font-weight: bold;"> id</span> is the id of the player
+        object tag . It will add an id to your object tag player as follows:
+        vidgpop + the id number of the word to which the definition (the id is
+        at the top of the form creation/editing of the word) .<br />
+        <br />
+        For example, the definition of id n°<b>35</b>, the id will be &lt;object
+        id="vidgpop<b>35</b>"...</p>
+      <h4>5.3.1 - Concrete Example</h4>
+      <ul>
+        <li><span style="text-decoration: underline;">1) Reader's Choice</span>
+          (or 'players')<br />
+          These flash players. The advantage is that they will find server side
+          (on your site, so) and they will be displayed on almost all
+          configurations. It is, for video <span style="font-weight: bold;">flv
+            player</span> :<br />
+          <a target="_blank" href="http://flv-player.net/players/maxi/preview/">http://flv-player.net/players/maxi/preview/</a>
+          and for audio, <span style="font-weight: bold;">Flash mp3 player</span>
+          :<br />
+          <a target="_blank" href="http://flash-mp3-player.net/fr/players/maxi/">http://flash-mp3-player.net/fr/players/maxi/</a>
+          Both are well documented and are by the same author which is an
+          advantage because the javascript commands are the same.<br />
+          <br />
+        </li>
+        <li>2)<span style="text-decoration: underline;"> Installation Files</span><br />
+          Download the players and place them in the folder userfiles/media/.<br />
+          <br />
+        </li>
+        <li>3) <span style="text-decoration: underline;">Create the file
+            fonct_util.js</span><br />
+          You can use an editor for this but a simple text file created using
+          Windows Notepad enough.<br />
+          Right click, new, text document, open it and copy/paste the following
+          code:
+          <pre class="brush:js;">function demLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsPlay", "");<br />}<br />function stopLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsStop", "");<br />}</pre>
+          <br />
+          Save the file and rename it<span style="font-weight: bold;">
+            fonct_util.js</span><br />
+          Finally, load it in the js folder of Glossaire_XH (in
+          plugins/glossaire/js/)<br />
+          <br />
+          The script of the glossary will be responsible for recognizing the
+          presence of the file and use the functions demLect and stopLect when
+          the time comes.<br />
+          <br />
+        </li>
+        <li>4) <span style="text-decoration: underline;">Insert the video
+            player in a definition</span>.<br />
+          For example, a word whose id is <span style="font-weight: bold;">43</span>
+          (this id appears in the list of words). A video file .flv will be
+          included in its definition. The video file is named video.flv (in this
+          example), place it in the folder userfiles/media/. To create flv
+          files, there are free converters. Here is an example:<br />
+          <br />
+          <span style="font-weight: bold;">Free FLV Converter</span> on <a target="_blank"
+
+href="http://www.koyotesoft.com/">http://www.koyotesoft.com/</a><br />
+          <br />
+          Code inserted in the definition, id <span style="font-weight: bold;">vidgpop43</span>
+          is added :
+          <pre>&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br /> &lt;/object&gt; </pre>
+          <br />
+          Paths can be relative to the root of the site, as above. The path of
+          the flv file, meanwhile, is relative to the location of the player.<br />
+          <br />
+          <span style="text-decoration: underline;">In the case of a <span style="font-weight: bold;">multilingual
+              site</span></span>: When it is not the primary language of the
+          site, add <span style="font-weight: bold;">../</span> before
+          userfiles/ like this:<br />
+          <pre>"<span style="font-weight: bold;">../</span>userfiles/media/player_flv_maxi.swf"</pre>
+          <br />
+          Important reminder : For inclusion in a definition must be added to
+          the object tag an id equal to the id of the word in question (here
+          vidgpop43). This is the id that will be targeted by demLect and
+          stopLect functions.<br />
+          <br />
+        </li>
+        <li>5)<span style="text-decoration: underline;"> Insert the mp3 player</span><br />
+          Place the mp3 file into the folder userfiles/media/ (and the reader if
+          it is not already). Same method as for the video file, sample code
+          inserted in the definition of the word with id <span style="font-weight: bold;">45</span>
+          (mp3 file of the example is called eagles.mp3) and where the id given
+          to the object tag becomes <span style="font-weight: bold;">vidgpop45</span>:
+          <pre class="brush:php;">&lt;object id="vidgpop45" type="application/x-shockwave-flash" data="userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br /> &lt;/object&gt;</pre>
+          Finally, the option to can freeze a definition can be checked (at the
+          bottom of the create/edit page of a word) for the insertion of an
+          audio/video player. The close button which then appears at the top
+          right of the definition, also will stop the playback.</li>
+      </ul>
+      <h2>VI - Printing</h2>
+      <p>When printing an article, every word remains highlighted and defined
+        with a link to its definition placed at end of article (underline does
+        not necessarily appear in the preview used depending on the css of
+        template). The definitions thus accumulated are preceded by a title "<span
+
+style="font-weight: bold;">Glossary</span>". If printing is done to a
+        pdf, the links remain active and link to each relevant definition
+        (anchor).</p>
+      <p>Note : An article also includes its glossary of defined words when
+        printing. The number of printed pages will depend on the length of the
+        article but also that of its definitions. The advantage of using short
+        definitions takes on its meaning.</p>
+      <p>The definitions are nevertheless displayed in two columns and a smaller
+        font size.</p>
+      <h2>VII - Uninstall</h2>
+      <p>On <span style="font-weight: bold;">Configuration</span> page, disable
+        the plugin for each template in the list.</p>
+      <p>This means delete <span style="font-weight: bold;">init_Glossaire()</span>
+        in the <span style="font-style: italic;">template.htm</span> file of
+        each template.</p>
+      <p>Then delete all the plugin files, this means removing the "<span style="font-style: italic;">glossaire</span>"
+        folder: plugins/glossaire/</p><h2>VIII - Download</h2>
+        <p>You can download <b>Glossaire_XH</b> on this page : <a href="https://www.f5swn.fr/en/?Plugins/Glossaire"
+
+target="_blank" title="Glossaire_XH download">Glossaire_XH v2</a></p>
+
+      <h2 id="license">IX - License</h2>
+      <p><b>Glossaire_XH</b> is licensed under <a href="http://www.gnu.org/licenses/gpl.html"
+
+title="GPLv3 LICENSE" target="_blank">GPLv3</a>.</p>
+      <p><br /></p><p>© 2018 <a href="https://www.f5swn.fr/en/" target="_blank">Ludovic AMATHIEU</a></p>
+      <a class="go_top" href="#top_page">TOP</a> </div>
+</body></html>

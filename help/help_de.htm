@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Version 2.0 -->
+    <title>Benutzerhandbuch Plugin GLOSSARY </title>
+    <meta name="description" content="User manual of Glossary plugin for GuppY v5" />
+    <link type="text/css" href="help_files/stylesheet.css" rel="stylesheet" />
+    <script type="text/javascript" src="help_files/generated_toc.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1 style="text-align: center;">Glossaire_XH - Benutzerhandbuch</h1>
+      <p style="text-align: center;">Willkommen beim Benutzerhandbuch von <a target="_blank"
+
+          title="Plugin Glossaire_XH for CMSimple_XH">Plugin </a><a href="https://www.f5swn.fr/en/?Plugins/Glossaire"
+
+          target="_blank">Glossaire_XH v2</a><a target="_blank" title="Plugin GLOSSAIRE for CMSimple_XH"><b></b></a>
+        für <a href="http://www.cmsimple-xh.org/" title="CMSimple_XH" target="_blank">CMSimple_XH</a>
+        (<b>1.7.x</b>). <br />
+      </p>
+      <div id="generated-toc" class="de"> </div>
+      <div class="pl_icon"><img src="help_files/glossaire_icon.png" alt="Plugin Glossaire_XH"
+
+          title="Plugin Glossaire_XH" /></div>
+      <h2 id="top_page">I - Beschreibung</h2>
+      <p><span style="font-weight: bold;">Glossaire_XH</span> zeigt bei Mouseover
+        eine Definition von betimmten Wörtern in Ihrer Webseite und in
+        Newsboxen. Diese Definition darf betitelt und illustriert sein.</p>
+      <p>Wenn eine Konfiguration das erste Mal für das benutzte Template
+        validiert wurde, rufen Sie den Admin-Modus auf, erstellen das erste Wort
+        und seine Definition.</p>
+      <p>Wenn Sie den Text auf der jeweiligen Seite lesen, in dem das vorher
+        erklärte Wort vorhanden ist, erscheint die definition bei einem
+        Mouseover wie ein Tooltip.</p>
+      <ul>
+        <li>Dieses Wort erscheint durch eine gepunktete Linie hervorgehoben
+          (konfigurierbar)</li>
+        <li>Die Anzahl der Ereignisse ist konfigurierbar (es erlaubt eine
+          Definition vom ersten Auftauchen allein von diesem Wort, zum Beispiel)</li>
+        <li>Der Bezug der angezeigten Definition ist für jedes einzelne Template
+          konfigurierbar.</li>
+        <li>Arbeitet auch in multilingualen Webseiten.</li>
+        <li>Pluralbildungen werden (bei unterstützten Sprachen) erkannt.<br />
+          <br />
+          Die Intervention im Text erfolgt auf der Ebene der variablen Inhalte
+          und kurz bevor diese auf der Webseite erscheinen. Wörterlisten (eine
+          für jede Sprache) und die damit verbundenen Definitionen werden in
+          einem Textformat im Ordner 'data' des Plugins 'glossaire'
+          abgespeichert.</li>
+      </ul>
+      <h2>II - Sprachen</h2>
+      <p>Das Plugin kann mit allen durch CMSimple_XH unterstützten Sprachen
+        zusammenarbeiten.</p>
+      <p>Sein Plural-Detektor (versucht durch die Wortstämme die Pluralbildungen
+        zu erkennen) unterstützt z.Zt. diese Sprachen: Cs, Da, De, Fr, It, Ru,
+        Sk.</p>
+      <p style="margin-left: 40px;"><span style="font-style: italic;">Danish
+          (Dänisch): Erstellen Sie das Wort in der Infinitiv-Form. Daher findet
+          der Detektor sowohl die Singular als auch die Pluralformen, wenn diese
+          nicht voneinander abweichen.<br />
+          Beispiel für: <b>car = bil</b>, die dänischen Wörter "bilen, biler,
+          bilerne" werden genauso erkannt und markiert.</span> <br />
+        <br />
+        <span style="font-style: italic;">Slovak and Czech: Erstellen Sie das
+          Wort als Basis in der Infinitiv-Form. Der Detektor für Pluralformen
+          wird versuchen, andere Formen und deren Plural zu finden.<br />
+          Nur die Nomen sind betroffen, jedoch wird die Bestimmung der Fälle
+          nicht unterstützt.<br />
+        </span> </p>
+      <p>Die Verwaltung ist für verschiedene Sprachen vorhanden (default ist
+        English).</p>
+      <ul>
+        <li><span style="font-weight: bold;">French</span></li>
+        <li><span style="font-weight: bold;">English</span> (selbst erstellte
+          Übersetzung aus dem Französischen ins Englische. Bitte teilen Sie mir
+          Fehler, die Sie in der Hilfe-Datei finden, mit).</li>
+        <li><span style="font-weight: bold;">Deutsch</span>: Die Sprachdatei und
+          die Hilfe-Datei wurden nach bestem Wissen übersetzt: <a target="_blank"
+
+            href="https://cmsimplexh.de">Michael Zajusch</a> (Bitte
+          teilen Sie mir Fehler, die Sie in der Hilfe-Datei finden, mit.)</li>
+        <li><b>Slovak</b> - Übersetzungen durch <a target="_blank" href="http://www.cmsimpleforum.com">Tata</a></li>
+        <li><b>Czech</b> - Übersetzungen durch <a target="_blank" href="http://oldnema.compsys.cz/en/?Demo_templates">Oldnema</a></li>
+      </ul>
+      <p>Um eine neue Sprache-Datei zu diesem Plugin hinzuzufügen, sind zwei
+        Bedingungen nötig:</p>
+      <ul>
+        <li>Übersetzung der Sprachdatei.<em></em> </li>
+        <li>Der Plugin-Autor muss die Voraussetzung zum Erkennen der jeweiligen
+          Sprachdatei noch ins Plugin programmieren.</li>
+      </ul>
+      <p>Wenn Sie für die Nutzung des Plugins eine andere Sprache wünschen und
+        planen, kontakten Sie den Plugin-Autor. Sie könen ihm eine eigene
+        Übersetzung der Sprachdatei übersenden. Herzlichen Dank!</p>
+      <h3>2.1 - Gebrauch in einer Multilingual Seite</h3>
+      <p>Glossaire_XH stimmt mit der Philosophie von CMSimple_XH
+        überein. Das Plugin erscheint in der Sprache, die in der
+        CMSimple_XH-Installation eingestellt wurde (in Übereinstimmung mit der
+        Sprache, die durch das Plugin unterstützt wird, wenn es nicht in
+        Englisch ist) und die Worte und die Erklärungen werden in einem
+        speziellen Daten-Ordner des Plugins erstellt. Wenn Ihre Seite z.B. zwei
+        Sprachen beinhaltet (Englisch und Deutsch), werden die Worte in Englisch
+        und ihre Erklärungen im speziellen Daten-Ordner des Plugins <b>data/en/</b>
+        abgespeichert. Für Deutsch, es ist die deutsche Datei, die im
+        Daten-Ordner des Plugins <b>data/de/</b> abgespeichert wird.</p>
+      <h2>III - Installation</h2>
+      <p>Kopieren Sie den Inhalt der ZIP-Datei (jeweils neueste Version) in den
+        Ordner plugins/ in Ihrer CMSimple_XH Installation).</p>
+      <p>Achten Sie bitte darauf, dass bei allen Ordnern die Dateiattribute =
+        chmod "<span style="font-weight: bold;"> 705</span>" (statt 755) und bei
+        allen erforderlichen Dateien die Dateiattribute = chmod "<span style="font-weight: bold;">604</span>"
+        (statt 644) geändert und eingestellt sind. </p>
+      <p>Checken Sie dies mit Ihrem FTP-Programm (z.B. FileZilla).</p>
+      <p><span style="text-decoration: underline;">Nutzung des Plugins</span>:
+        Einfach die erste Konfiguration (in der Konfigurations-Seite) für das
+        ausgewählte und genutzte Template sichern. Die template.htm -Datei des
+        genutzten Templates wird durch ein Hinzufügen von <span style="font-style: italic; font-weight: bold;">init_Glossaire()</span><span
+
+          style="font-style: italic; font-weight: bold;"></span> modifiziert.
+        Eine Kopie der Original-Datei wird als Datei (template.htm.bak) erstellt
+        und gespeichert.</p>
+      <p>Entsprechend den Beschränkungen Ihres Host-Anbieters, könnten
+        verschiedene Operationen nicht möglich sein. In diesem Fall müssen Sie
+        die Änderungen manuell am template.htm Ihres Templates vornehmen. Fügen
+        Sie den Code <b>vor</b> &lt;?php echo content();?&gt; ein.</p>
+      <pre>&lt;?php init_Glossaire(); ?&gt;</pre>
+      <p>Der Pluginaufruf ist so (mit dem Leerzeichen) absolut richtig! Als
+        automatischen Komfort fügt das Plugin den richtigen Code genau hinter
+        das end tag &lt;/head&gt; ein.</p>
+      <p>In der Konfigurations-Seite des Plugins ist es möglich, das Plugin bei
+        einem bestimmten Template zu deaktivieren. Sie sehen das daran, dass in
+        der Box [Plugin-Zustand für diese Vorlage (Template)] es darunter zwei
+        Möglichkeiten gibt: 1. Für das aktuelle Template steht dort: Deaktiviert
+        (validiert die Konfiguration zum Aktivieren) 2. Für ein neu gewähltes
+        Template aus der Box darüber und nach dem Klick auf den Button <b>Speichern</b>
+        ganz unten, erscheint dann "ACTIVE deaktivieren -&gt; " mit einer
+        Checkbox. Diese Checkbox ist für die Deaktivierung vorgesehen.</p>
+      <h3>3.1 - Updates</h3>
+      <p>Glossaire_XH ist mit dem <span style="font-weight: bold; font-style: italic;">Updatecheck</span>
+        Plugin (by <a href="http://CMSimple.HolgerIrmler.de" title="updatecheck"
+
+          target="_blank">Holger Irmler</a>) kompatibel, das dem Webmaster
+        anzeigt, ob Updates vorhanden sind.</p>
+      <h2>IV - Konfiguration</h2>
+      <p>Diese Seite erlaubt Ihnen für jedes Template: </p>
+      <ul>
+        <li><span style="font-weight: bold;">Ausschalten des Plugins auf ihrer
+            Webseite</span> (unterstrichene Worte und die entsprechenden
+          Erklärungen in einem Tooltip).<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Aktivierung des Plugins in
+            NewsBoxen</span>.<br />
+          Wenn das Plugin ebenfalls im Text von NewsBoxen arbeiten soll.<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Die Konfiguration der Nummern des
+            Aufrufs werden in der Webseite entsprechend ersetzt</span>.<br />
+          Geben Sie die Nummer ein (z.B. 1, wenn Sie nur den ersten definierten
+          Aufruf des erscheinenden Wortes in der Webseite wünschen). Wenn Sie
+          bei allen Worten die definierte Erklärung wünschen, geben Sie <span style="font-weight: bold;">-1</span>
+          (Minus-Zeichen gefolgt von einer Zahl ohne Leerzeichen) ein. [Geben
+          Sie in dieses Feld nichts anderes ein!]<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Bestimmen Sie die Weite des
+            Fensters der Toolbox (=Tooltip) für die entsprechende Erklärung.</span>
+          Für eine lange Erklärung (vergessen Sie nicht, dass die Erklärungen am
+          Ende der Webseiten in der Quelldatei hinzugefügt werden), und die
+          vorgegebene Weite des Tooltip-Fensters unzureichend erscheint, wird
+          dieser Rahmen zu groß gezogen. <br />
+          <br />
+          Zwei Weiten sind konfigurierbar: Die erste vorgegebene Weite des
+          Tooltip-Fensters [default] ist die Weite die für alle Erklärungen
+          gezeigt wird. 20em ist normalerweise ein guter Wert, aber auch diesen
+          können Sie ändern.<br />
+          <br />
+          Warum "em" und nicht "px"? "em" ist eine relative Einheit, die es
+          erlaubt Text zu skalieren. Die Toolbox für die Erklärung behält ihre
+          Proportionen bei, auch wenn der Besucher den Text im Browser zoomt.
+          Der zweite Wert ist auf 30em [default] voreingestellt. Wenn Sie dies
+          ändern, wird bei der Weite der Toolbox in Verbindung mit den
+          Erklärungen ein Check als Option vorausgesetzt und zum Zeitpunkt der
+          Veröffentlichung durchgeführt.<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Übereinstimmung im Moment des
+            Auftretens der gezeigten Erklärung</span>. Das Wort wird mit einer
+          einfachen, gestrichelten oder gepunkteten Linie unterstrichen, und Sie
+          können die Farbe wählen.<br />
+          <br />
+        </li>
+        <li><span style="font-weight: bold;">Übereinstimmung im Moment des
+            Auftretens der gezeigten Erklärung</span>. Eine Vorschau im Moment
+          des Auftretens der gezeigten Erklärung erlaubt Ihnen, sofort Ihre
+          gewählten Einstellungen zu betrachten.</li>
+      </ul>
+      <p> Sie werden die Option bemerken und können das Template gegenüber dem
+        voreingestellten Template [default] entsprechend ändern. In diesem Fall
+        wird die Webseite mit dem neu ausgewählten Template geladen. Das erlaubt
+        Ihnen, die Erklärungen für den Tooltip einfacher mit Hilfe einer
+        Vorschau zu vergleichen und ob das die gewünschte und richtige Form ist.
+        (Diese Vorschau zeigt sofort die Einstellungen im Teil AUSSEHEN der
+        DEFINITIONEN im Teil "Konfiguration"). Auch wenn diese Form validiert
+        wurde, ist das Template noch immer auswählbar und wird angezeit. Sie
+        können daher auch ein anderes Template für eine andere Webseite wählen.<br />
+        <br />
+        <b>Wichtig</b>: So lange die Konfiguration des Templates nicht validiert
+        wurde, wird das Plugin für Besucher nicht arbeiten.</p>
+      <p>Tipp: Geben Sie aufgrund des Feldes kurze Erklärungen an.</p>
+      <h2>V - Wörter und Erklärungen</h2>
+      <p>Auf dieser Seite werden die Listen zu Wörtern und den mit ihnen
+        verbundenen Erklärungen verwaltet.</p>
+      <h3>5.1 - Die Liste der Wörter</h3>
+      <p>Es zeigt existierende Wörter, Zugang zur Bearbeitung oder Erstellung
+        von Wort und zugehöriger Erklärung, es erlaubt aber ebenso das einfache
+        Entfernen vom Wort und zugehöriger Erklärung.</p>
+      <h4>5.1.1 - Die Filter</h4>
+      <p>Diese kommt in Form einer alphabetischen Liste.<br />
+        Wenn Sie einen Buchstaben aus dieser Filterliste anklicken, werden aus
+        der Tabelle die speziellen Wörter-Dateien herausgefiltert und in
+        entsprechender alphabeitscher Reihenfolge in der Wörterliste
+        aufgelistet.<br />
+      </p>
+      <h4>5.1.2 - Sortierung</h4>
+      <p>Jede Spalte in der Tabelle hat eine Überschrift (<span style="font-weight: bold;">Id</span>
+        oder <span style="font-weight: bold;">Worte</span>), die einen Link zur
+        Sortierung besitzen. Sie können die Tabelle nach den Id-Nummern oder
+        nach den von Ihnen vergebenen Worten sortieren lassen. Je nach
+        Sortierung wird dann entweder "Id" oder "Worte" durch einen Unterstrich
+        hervorgehoben. (Die alphabetische Sortierung bzw. Abkürzungen werden
+        zuerst angezeigt). Die Größe der Tabelle ist beschränkt. Wenn die Anzahl
+        der Wörter so zunimmt, dass sie die Tabellenbegrenzungen überschreitet,
+        können Sie trotzdem in der Tabelle sich die einzelnen Zeilen anzeigen
+        lassen, indem sie mit dem Mausrad oder durch Nutzung des Scrollbars an
+        der rechten Seite durch die Liste browsen. Die Nutzung von Filtern
+        reduziert die Anzahl der gezeigten Zeilen.</p>
+      <h4>5.1.3 - Die Liste</h4>
+      <p>Die Liste hat eine Spalte für Id und eine für Wörter. Am Ende der Zeile
+        sehen Sie noch ein Symbol für Löschung/en (Papierkorb mit rotem X). Eine
+        Checkbox am Ende jeder Zeile wird dazu genutzt, um ein oder mehrere
+        Wörter für die Löschung auszuwählen. Wird das erste Häkchen in der
+        Checkbox gesetzt, wird die ausgewählte Zeile rot eingefärbt und
+        gleichzeitig wechselt die letzte Zeile der Tabelle von "Erstelle ein
+        Wort" nun zu "1 gewählt" und "Löschen". Es können auch mehrere Worte
+        gleichzeitig gewählt werden. Es muss dazu immer die Checkbox angeklickt
+        werden. Ein Klick auf den Button "<span style="font-weight: bold;">Löschen</span>"
+        bewirkt, dass die ausgewählten Dateien im Plugin-Ordner /data/ gelöscht
+        werden. Löschen eines Wortes zieht auch die Löschung der dazugehörenden
+        Erklärung nach sich.</p>
+      <h3>5.2 - Erstellung von Wort und Erklärung</h3>
+      <p>Am Ende der Liste, klicken Sie auf "<span style="font-weight: bold;">Erstelle
+          ein Wort</span>".</p>
+      <p>Sie sind jetzt auf der Seite "<span style="font-weight: bold;">WORT und
+          DEFINITION</span>", wohin Sie das Wort schreiben, den Titel der
+        Erklärung (optional)*, und die Erklärung selbst.</p>
+      <p>Bezüglich des Titels, ist es der Titel für die Erklärung. <span style="text-decoration: underline;">
+          *Haben Sie keine Titel-Ärea, lassen Sie das Feld leer.</span></p>
+      <p>Eine Id wird oben auf der Seite angezeigt. Diese ist die Nummer, die
+        das Wort und die Erklärung identifiziert. Das Wort, ist nicht
+        editierbar.</p>
+      <p>Fügen Sie in die Felder <span style="font-weight: bold;">WORT </span>und<span
+
+          style="font-weight: bold;"> TITEL</span> kein HTML-Code oder anderes
+        hinein. Schreiben Sie die Texte in diesen beiden Feldern mit Ihrer
+        Tastatur. Benutzen Sie z.B. nicht <span style="font-style: italic;">copy/paste</span>.
+        Das ist besonders für Sonderzeichen sehr wichtig.</p>
+      <p style="margin-left: 40px;"><span style="font-style: italic;">Anmerkung:
+          Die Untersuchung des einzelnen Webseite durch das Plugin ist nicht
+          "abhängig von Groß-/Kleinschreibung". Also, für Abkürzungen (z.B.:
+          A.B.C.D. oder ABCD) und nur in diesem Fall, wird sich die Suche NUR
+          auf Großbuchstaben beziehen (a.b.c.d. oder abcd werden nicht gefunden
+          werden)</span>.</p>
+      <p><span style="font-weight: bold;">DEFINITION</span>: Der Editor
+        (abhängig von der Wahl die der Admin von CMSimple_XH machte) erlaubt
+        Ihnen die Erklärung zu erstellen. Sie können ein Bild platzieren
+        (beachten Sie die Erklärung, dass es nicht sehr weit dargestellt werden
+        kann. Deshalb benutzen Sie ein kleines Bild, weil es sonst verkleinert
+        gezeigt wird).</p>
+      <p>Die Farben (Titel, Texte und ihre Hintergründe), Zeichensatz,
+        Randfarben sind in einem weiteren Teil der <span style="font-weight: bold;">Konfigurationsseite</span>konfigurierbar.</p>
+      <p>Unten, kurz vor dem Speichern-Button, erlaubt eine Checkbox, dass die
+        Weite des Festers definiert werden kann.</p>
+      <p>Eine andere Option erlaubt Ihnen das Verhalten des Tooltips während des
+        Mouseovers einzustellen. Wenn es ausgewählt ist, wird der Tooltip mit
+        der Erklärung nach dem Mouseover eingefroren bleiben. Ein Wahlbutton
+        befindet sich in der rechten oberen Ecke. (Es wird geschlossen, wenn ein
+        anderer Tooltip gezeigt wird). Ohne diese Option wird der Tooltip sofort
+        geschlossen, wenn der Mauscursor nicht mehr über dem Wort ist.<br />
+        Dies kann z.B. bei Texten mit Verknüfungen (links) sehr hilfreich sein.</p>
+      <p>Wenn die Form ausgefüllt ist, klicken Sie auf "<span style="font-weight: bold;">Speichern</span>"
+        am Ende der Seite.</p>
+      <p>Nun sind Sie zurück in der Liste von Worten und es erscheint in dieser
+        Liste das Wort, das Sie gerade erstellt haben. </p>
+      <h3>5.3 - Sound und Video</h3>
+      <p>Zuerst müssen Sie realisieren, dass wenn ein Wort in der Webseite
+        erklärt wird, diese Erklärung zwangsläufig an das Ende der Seite
+        verschoben wird. Sogar wenn ein Wort mit Erklärung nicht im
+        Webseitentext auftaucht, ist der definierte Inhalt trotzdem im
+        Seiten-code enthalten. Im dem Fall, in dem Sie eine Audio- oder
+        Video-Datei in eiem Player abspielen möchten, kommen diese Probleme zu
+        Tage:</p>
+      <ul>
+        <li>Wie wird das automatische Abspielen gestartet?</li>
+        <li>Wie wird es gestoppt, wenn die Erklärung geschlossen wird?</li>
+      </ul>
+      <p>Das Script Glossary kann einen Player steuern, wenn dieser von
+        Javascript kontrolliert wird. Es ruft automatisch zwei Funktionen auf,
+        eine zum Abspielen, wenn der Tooltip auftaucht, die andere zum Stoppen,
+        wenn der Tooltip geschlossen wird. Sie müssen eine Javascript-Datei mit
+        dem Namen erstellen:<span style="font-weight: bold;"> fonct_util.js</span>
+        und diese kopieren Sie in den js Ordner des Plugins
+        (plugins/glossaire/js/). Es sollte die folgende Funktion beeinhalten und
+        muss auch noch an den benutzten Player angepasst werden:<br />
+        <br />
+        Für das Playback: <b>demLect(id)</b><br />
+        Zum Stoppen: <b>stopLect(id)<br />
+        </b><br />
+        dort, wo die <span style="font-weight: bold;"> Id</span> ist die Id des
+        Objektes beim Player. Es wird eine Id zu Ihrem Objekt-Kennzeichen des
+        Players wie folgt hinzugefügt: vidgpop + the id number des entsprechend
+        gewählten Wortes (die Id ist oberhalb der Form Erstellen/Bearbeiten des
+        Wortes zu finden).<br />
+        <br />
+        Zum Beispiel, der Tooltip mit der Id Nummer <b>35</b>, soll &lt;object
+        id="vidgpop<b>35</b>" &gt; sein ...</p>
+      <h4>5.3.1 - Konkretes Beispiel</h4>
+      <ul>
+        <li><span style="text-decoration: underline;">1) Wahl des Vorlesers /
+            der Vorleserin</span> (oder 'Players')<br />
+          Diese sind Flash-Player. Der Vorteil ist, dass sie es serverseitig
+          finden (auf Ihrer Webseite, so) und es wird es in nahezu allen
+          Konfigurationen auf dem Bildschirm erscheinen. Für Video ist es der <span
+
+            style="font-weight: bold;">flv player</span> :<br />
+          <a href="http://flv-player.net/players/maxi/preview/" target="_blank">http://flv-player.net/players/maxi/preview/</a>
+          und für Audio, <span style="font-weight: bold;">Flash mp3 player:</span>
+          <br />
+          <a href="http://flash-mp3-player.net/fr/players/maxi/" target="_blank">http://flash-mp3-player.net/fr/players/maxi/</a>
+          Beide wurden vom selben Autor gut dokumentiert, was von Vorteil ist,
+          weil die Javascript Kommandos die selben sind.<br />
+          <br />
+        </li>
+        <li>2)<span style="text-decoration: underline;"> Installationsdateien</span><br />
+          Downloaden Sie die Player und laden Sie diese in den Ordner
+          userfiles/media/ auf ihrem Serrver.<br />
+          <br />
+        </li>
+        <li>3) <span style="text-decoration: underline;">Erstellen Sie die
+            Datei fonct_util.js</span><br />
+          Sie können hierfür einen Editor nutzen, weil dies eine einfache
+          Textdatei ist, erstellt mit dem Windows Notepad.<br />
+          Rechts Klick, Neu (new), Textdokument, öffnen Sie es und kopieren Sie
+          mit copy 'n paste den folgenden Code:
+          <pre class="brush:js;">function demLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsPlay", "");<br />}<br />function stopLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsStop", "");<br />}</pre>
+          <br />
+          Sichern Sie die Datei und benennen Sie diese in <span style="font-weight: bold;">
+            fonct_util.js</span> um.<br />
+          Zum Schluss laden Sie diese Datei in den js Ordner vom Plugin Glossaire_XH (plugins/glossaire/js/)<br />
+          <br />
+          Das Glossaire-Script ist zur Erkennung der Präsenz einer Datei verantwortlich und nutzt die Functionen
+          demLect und stopLect wenn die die Zeit kommt.<br />
+          <br />
+        </li>
+        <li>4) <span style="text-decoration: underline;">Fügen Sie den Video-Player in die Erklärung ein</span>.<br />
+          Z.B., ein Wort, desssen id ist <span style="font-weight: bold;">43</span>
+          (diese Id erscheint in der Liste der Wörter). Eine Video-Datei mit der Dateiendung .flv wird in diesen Tooltip 
+          eingefügt.
+          Die Videodatei wird video.flv (in diesem Beispiel) genannt, und wird in den Ordner  userfiles/media/ kopiert. 
+          m  flv -Dateien zu erstellen, gibt es freie Konverter. Hier ist ein Beispiel:<br />
+          <br />
+          <span style="font-weight: bold;">Free FLV Converter</span> on <a href="http://www.koyotesoft.com/"
+
+target="_blank">http://www.koyotesoft.com/</a><br />
+          <br />
+          Wird in den Tooltip Code mit der Id <span style="font-weight: bold;">vidgpop43</span> eingefügt, ergänzen Sie dies:
+          <pre>&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="./userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br /> &lt;/object&gt; </pre>
+          <br />
+          Die Pfade können relativ zur Installation auf der Seite und  to the root of the site, as above. The path of
+          the flv file, meanwhile, is relative to the location of the player.<br />
+          <br />
+          <span style="text-decoration: underline;">Im Fall einer <span style="font-weight: bold;">multilingualen Seite</span></span>: 
+          Wenn dies nicht die Primärsprache ist, ergänzen Sie <span style="font-weight: bold;">../</span> vor userfiles/ dieses:<br />
+          <pre>"<span style="font-weight: bold;">../</span>./userfiles/media/player_flv_maxi.swf"</pre>
+          <br />
+          Wichtige Erinnerung: Zum Einfügen in einen Tooltip muss eine Sachmarkierung (tag) hinzugefügt werden, die die gleiche Id hat wie die Id des betroffenen Wortes hat (hier
+          vidgpop43). Dies ist die Id, die die Funktionen  demLect und stopLect gezielt aufruft.<br />
+          <br />
+        </li>
+        <li>5)<span style="text-decoration: underline;"> Einfügen eines mp3-Players</span><br />
+          Kopieren Sie eine mp3-Datei in den Ordner  userfiles/media/  (und den Player, wenn dies noch nicht geschah). 
+          Dies gilt ebenso für Video-Dateien. Der Auswahl-Code, der für das ausgewählte Wort mit der Id <span
+
+style="font-weight: bold;">45</span> in die der Tooltip eingefügt wird
+          und die zugehörige Id zu diesem Objekt wird zu <span style="font-weight: bold;">vidgpop45</span> (z.B. heißt die mp3-Datei dann eagles.mp3):
+          <pre class="brush:php;">&lt;object id="vidgpop45" type="application/x-shockwave-flash" data="./userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br /> &lt;/object&gt;</pre>
+          Abschließend, kann mit einer Option der Tooltip, in die ein Audio-/Video-Player eingefügt wurde, eingefroren werden 
+          (am Ende der Seite [Glossaire - Worte und Definitionen], in der Sie die Wörter und Erklärungen eingeben)
+          Der Button zum Schließen, der in dem Tooltip rechts oben auftaucht, beendet dann das Playback.</li>
+      </ul>
+      <h2>VI - Drucken</h2>
+      <p>Wenn Sie eine Webseite drucken, wird jedes hervorgehobene und für das Plugin definierte Wort mit einer Verknüpfung (Link) am Ende der Webseite platziert
+        (die unterschiedliche Unterstreichung erscheint jedoch nicht notwendigerweise in der Vorschau; 
+        das hängt mit den Definitionen in CSS des Templates zusammen). Die verschiedenen Erklärungen (zu den unterschiedlichen Wörtern) können dadurch gehäuft unter dem Titel "<span
+
+style="font-weight: bold;">Glossary</span>" aufgelistet werden. Wurde der Druck als PDF initiert, so sind diese Verknüpfungen (links) immer noch aktiv und 
+        fungieren wie eine Sprungmarke (anchor).</p>
+      <p>Beachten Sie: Eine Webseite beinhaltet auch beim Drucken also alle mit dem Plugin Glossaire_XH definierten und erklärten Worte. 
+        Die Zahl der gedruckten Seiten wird deshalb in Abhängigkeit der Länge der Erklärungen für die Tooltips sein. In solchen Fällen macht es Sinn, 
+        sich auf kurze Erklärungen zu beschränken.</p>
+      <p>Diese Erklärungen werden are trotzdem in zwei Spalten mit einem verkleinerten Zeichensatz dargestellt.</p>
+      <h2>VII - Deinstallieren</h2>
+      <p>Auf der <span style="font-weight: bold;">Konfigurationsseite</span>, deaktivieren Sie das Plugin für jedes Template in der Liste.</p>
+      <p>Das meint das Löschen von <span style="font-weight: bold;">init_Glossaire()</span>
+        in der <span style="font-style: italic;">template.htm</span> jedes einzelnen Templates.</p>
+      <p>Dann löschen Sie alle Dateien des Plugins auf dem Server. Das bedeutet, dass der komplette Ordner "<span
+
+style="font-style: italic;">glossaire</span>"
+        im Verzeichnis Plugins zu löschen ist.</p>
+      <h2>VIII - <span id="result_box" class="short_text" lang="de"><span class="">Herunterladen</span></span></h2>
+        <p><span id="result_box" class="short_text" lang="de"><span class="">Sie können <b>Glossaire_XH</b> auf dieser Seite herunterladen</span></span> : <a
+
+href="https://www.f5swn.fr/en/?Plugins/Glossaire" target="_blank" title="Glossaire_XH download">Glossaire_XH v2</a></p><h2
+
+id="license"></h2><h2>IX - Lizenz</h2>
+      <p><b>Glossaire_XH</b> ist eine <a target="_blank" title="GPLv3 LICENSE" href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> Lizenz.</p>
+      <p><br /></p><p>© 2018 <a href="https://www.f5swn.fr/en/" target="_blank">Ludovic AMATHIEU</a></p>
+      <a href="#top_page" class="go_top">TOP</a> </div>
+  
+
+
+</body></html>

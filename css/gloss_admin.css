@@ -1,0 +1,324 @@
+/*
+ * ==================================================================
+ * Plugin GLOSSAIRE_XH for CMSimple_XH (1.7.x)
+ * ==================================================================
+ * Version:    2.0 - jun 2018
+ * Copyright:  Ludovic AMATHIEU
+ * Website:    https://www.f5swn.fr/en/ (and contact)
+ * License:    GNU GPLv3 - http://www.gnu.org/licenses/gpl-3.0.en.html
+ * ==================================================================
+*/
+
+/* Préchargement */
+body:before {
+    content: url(../img/fond_un.png) url(../img/fond_bn.png);
+    display:none;
+}
+div#intro ul li {
+  border: 0 none;
+  line-height: 1.2em;
+  margin: 0 0 0 35px;
+  padding: 3px 0;
+}
+#gloss_edit table tr td, #gloss_config table tr td {
+  border: none;
+}
+div#gloss_config p {
+  background: transparent;
+  letter-spacing: 0;
+  margin: 10px 0;
+  padding: 0 5px;
+  text-align: justify;
+}
+div#gest_mots, div#gloss_config {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 550px;
+  text-align: center;
+}
+div#gloss_edit {
+  text-align: center;
+  font: 12px Arial, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 660px;
+}
+div#gest_mots fieldset.title, div#gloss_edit fieldset.title , div#gloss_config fieldset.title {
+    font-weight: bold !important;
+}
+fieldset.title span img.flag {
+  max-height: 20px;
+}
+div#gest_mots fieldset, div#gloss_edit fieldset, div#gloss_config fieldset { /* Encadrement des champs */
+  font: 14px Arial, Helvetica, sans-serif !important;
+  border: 1px solid #8F916A;
+  border-radius: 6px;
+  margin: 8px;
+  padding: 5px 10px;
+}
+div#gest_mots legend, div#gloss_edit legend, div#gloss_config legend { /* légende des encadrements */
+  font: 12px Arial, Helvetica, sans-serif !important;
+  color: #000000;
+  background-color: inherit;
+  font-weight: bold !important;
+  padding: 0 10px;
+}
+div#gest_mots label, div#gloss_edit label, div#gloss_config label { 
+    text-align: center;
+}
+div#gest_mots .filtre {
+  font: 12px Arial, Helvetica, sans-serif;
+}
+div#gest_mots .filtre b {
+  font: 12px Arial, Helvetica, sans-serif !important;
+  font-weight: bold !important;
+}
+div#gest_mots table.filtre tr td {
+  padding: 2px;
+  text-align: center;
+}
+div#gest_mots table.filtre tr td a {
+    text-decoration: none;
+  border: none;
+}
+div#gest_mots table.filtre tr td a:hover {
+  color: #4c92e7;
+}
+div#gest_mots .tableone, div#gest_mots .tableone2 {background:#324860; border:1px solid #fff; color:#fff;} 
+div#gest_mots .tableone {width:372px; border-collapse:collapse; margin:0 auto;}
+div#gest_mots .tabletwo {width:350px; border-collapse:collapse; font: 12px Arial, Helvetica, sans-serif !important;}
+div#gest_mots .tableone2 {width:222px; border-collapse:collapse; margin:0 auto;}
+div#gest_mots .tabletwo2 {width:200px; border-collapse:collapse;}
+div#gest_mots .tableone thead tr, div#gest_mots .tableone2 thead tr { 
+  height: 35px;
+  background: transparent url("../img/fthead.png") no-repeat;
+  display:inline-table; /*chrome - sinon background dupliqué dans chaque td de la ligne */
+}
+div#gest_mots .tableone th, div#gest_mots .tabletwo th, div#gest_mots .tableone2 th, div#gest_mots .tabletwo2 th {text-align:left;}
+div#gest_mots .th1 {width:30px; padding-left: 5px;}
+div#gest_mots .th2 {width:150px; padding-left: 7px;}
+div#gest_mots .th3 {width:150px; padding-left: 7px;}
+div#gest_mots .th4 {width:20px; padding-left: 1px;}
+div#gest_mots .thbout {width:17px; border-right: 1px solid #fff;}
+div#gest_mots .th1 div, .th2 div, .th3 div {padding: 0 0 0 5px;}
+div#gest_mots .tableone tbody, div#gest_mots .tableone2 tbody {background:#E3EAF2; color:#000;}
+div#gest_mots .tableone caption, div#gest_mots .tableone2 caption {background:#fff; color:#697210; font-size:1.2em; margin:0 auto;}
+div#gest_mots .tableone td, div#gest_mots .tableone2 td {border:1px solid #fff; color:#fff;}
+div#gest_mots .td1, div#gest_mots .td2, div#gest_mots .td3 {padding: 0 0 0 3px;}
+div#gest_mots .td1 {width:30px;}
+div#gest_mots .td2 {width:150px;}
+div#gest_mots .td3 {width:150px;}
+div#gest_mots .td4 {width:20px;}
+.suppr { margin: 0px 17px 0px; }
+div#gest_mots .tableone tfoot tr, div#gest_mots .tableone2 tfoot tr { 
+  height: 35px;
+  background: transparent url("../img/ftfoot.png") no-repeat;
+}
+.innerb {height:20em; overflow:auto; text-align:left;}
+div#gest_mots .tabletwo tr.dk td, div#gest_mots .tabletwo2 tr.dk td {background:#ddd; color:#000;}
+div#gest_mots .tabletwo td, div#gest_mots .tabletwo2 td {background:#F1F1F1; color:#000; font: 12px Arial,Helvetica,sans-serif;}
+div#gest_mots .tabletwo tr:hover td, div#gest_mots .tabletwo2 tr:hover td {color: #CA422F; background-color: #FFFACD;}
+div#gest_mots .tabletwo tr.coche td, div#gest_mots .tabletwo2 tr.coche td {color: white; background-color: #FF4500;}
+div#gest_mots .tabletwo tr.coche td a, div#gest_mots .tabletwo2 tr.coche td a {color: white;}
+div#gest_mots .tabletwo a:hover, div#gest_mots .tabletwo2 a:hover {font-weight: normal; left: 0; top: 0;}
+div#gest_mots .tabletwo tr td a, div#gest_mots .tabletwo2 tr td a {
+  color: #324860; 
+  text-decoration: none;
+  border: none; 
+  font-weight: normal; 
+  left: 0; 
+  top: 0;
+  font: 12px Arial,Helvetica,sans-serif;
+}
+div#gest_mots .tabletwo tr td a:hover, div#gest_mots .tabletwo2 tr td a:hover {color: #CA422F;}
+div#gest_mots .fonce td { background: #F9F9F9; font: 12px Arial,Helvetica,sans-serif;}
+div#gest_mots table.tableone, div#gest_mots table.tableone2 {
+  box-shadow: 3px 3px 9px #999 !important;
+  -webkit-box-shadow: 3px 3px 9px #999;
+  -khtml-box-shadow: 3px 3px 9px #999;
+}
+div#gloss_edit input[type="submit"], div#gloss_config input[type="submit"] {
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #eaedfb, #b6dafc) repeat scroll 0 0;
+  border: 1px outset #7f7f7f;
+  border-radius: 4px;
+  font: 12px Arial,Helvetica,sans-serif !important;
+  color: #000000;
+  font-size: 100% !important;
+  margin: 0;
+  padding: 2px 10px;
+}
+div#gloss_edit input[type="submit"]:hover, div#gloss_config input[type="submit"]:hover {
+  background: rgba(0, 0, 0, 0) linear-gradient(to top, #eaedfb, #7abcff) repeat scroll 0 0;
+}
+div#gloss_edit input[type="text"], div#gloss_edit input[type="text"]:focus, div#gloss_config input[type="text"], div#gloss_config input[type="text"]:focus, div#gloss_config select {
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 6px;
+  color: #404040;
+  font: 11px Arial,Helvetica,sans-serif !important;
+  margin: 4px 0;
+  padding: 2px 0 2px 5px;
+}
+div#gloss_config input[type="text"].occurnb {
+  width: 3em;
+}
+div#gloss_config input[type="text"].defwidth {
+  width: 4em;
+  margin: 10px 0;
+}
+.apercu {
+  padding : 0;
+  margin : 0;
+  width : 150px;
+  height : 180px;
+}
+#fixe {
+  position : fixed;
+  bottom : 50px;
+  width : 150px;
+  height : 180px;
+  z-index : 600;
+  padding : 0;
+  margin : 0 0 0 550px;
+}
+#ap_def {
+  position: relative;
+  left: 0px;
+  width : 150px;
+  height : 180px;
+}
+#ap_titre h4 {
+  margin: 0;
+  letter-spacing: 0;
+}
+div#gloss_config input[type="text"].gl_chp {
+  height: 15px;
+  margin: 0;
+  vertical-align: middle;
+  width: 6em;
+}
+input.gl_col {
+  margin-bottom: 1px;
+  vertical-align: middle;
+}
+option.fait {
+  background-color:#FBFCFF;
+  color:#330099;
+}
+option.pasfait {
+  background-color:#FFFFD6;
+  color:#D13737;
+}
+div#gest_mots input.btn_ok {
+  background: transparent url("../img/btn_list.png") no-repeat 65px 1px;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Tahoma,Helvetica,sans-serif !important;
+  font-size: 10px !important;
+  font-weight: bolder !important;
+  height: 31px;
+  width: 90px;
+  text-decoration: none;
+  text-align: right;
+  vertical-align: top;
+  margin: 0 17px;
+  padding: 3px 24px 3px 0;
+}
+div#gest_mots input.btn_ok:hover {
+  background: url("../img/btn_list.png") no-repeat 65px -34px; 
+  color:#FF6B6B;
+}
+div#gest_mots input.btn_ko {display: none;}
+span.suppr_txt {
+  float: left;
+  margin: 10px 0 0 10px;
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-size: 11px !important;
+}
+div#gest_mots th button { 
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-size: 12px !important;
+  font-weight: bolder !important;
+  min-width: 15px;
+  padding: 0;
+  cursor: pointer;
+}
+div#gest_mots th button.tri_on {
+  border-bottom: 1px solid white;
+}
+div#gest_mots th button.tri_off {
+  border-bottom: 1px solid transparent;
+}
+#btn_add_cont {
+  text-align: center;
+  width: 150px;
+  height: 22px;
+  margin: auto;
+}
+div#gest_mots input.btn_add {
+  background: transparent url("../img/btn_list.png") no-repeat 100px -68px;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Tahoma,Helvetica,sans-serif !important;
+  font-size: 10px !important;
+  font-weight: bolder !important;
+  height: 28px;
+  width: 150px;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: top;
+  padding: 3px 40px 3px 0;
+}
+div#gest_mots input.btn_add:hover {
+  background: url("../img/btn_list.png") no-repeat 100px -96px; 
+  color:#D3DFEB;
+}
+.glossaire_icon {
+  display: block;
+  float: left;
+  margin : 10px 20px 15px 10px;
+  box-shadow: none;
+}
+div.copy {
+  font-style: italic;
+  color: #696969;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 1px solid #8F916A;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.alert_activ {
+  width: 400px;
+  background:#FFFFD6 url("../img/alert.png") no-repeat 10px 15px;
+  color:#000000;
+  border: 1px solid #AAA;
+  font-size: 14px;
+  font-family: Tahoma, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 45px;
+  text-align: center;
+  vertical-align: middle;
+}
+.alert_activ .al_left {
+  text-align: left;
+}
+.alert_activ .al_right {
+  text-align: right;
+}
+.alert_activ p {
+  text-align: justify;
+  margin: 10px 0 10px 0;
+}
+.alert_activ td {
+  padding: 0 5px 0 5px;
+}
