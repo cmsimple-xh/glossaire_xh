@@ -68,6 +68,6 @@ function import($name, $origine = '', $striptags = TRUE, $value = NULL) {
             }
         }
     } else {
-        return $striptags ? strip_tags($var) : $var;
+        return $striptags ? strip_tags((string) $var) : $var;
     }
 }

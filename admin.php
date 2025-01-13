@@ -85,7 +85,7 @@ if (function_exists('XH_wantsPluginAdministration')
 
             // écriture de la définition
 
-            if (preg_match("`[&#;]`", $mot)){
+            if (preg_match("`[&#;]`", (string) $mot)) {
                $o .= XH_message('warning', "<p><u>".$plugin_tx['glossaire']['admin_msg_warning_last_word']."</u><br /><b>".$mot."</b><br />".$plugin_tx['glossaire']['admin_msg_dont_copy_past']."</p>");
             }
 
