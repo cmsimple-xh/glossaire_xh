@@ -23,6 +23,9 @@ $hjs .= "<link type=\"text/css\" rel=\"stylesheet\" href=\"".PATH_GLOSSAIRE."css
 $hjs .= "<script type=\"text/javascript\" src=\"".PATH_GLOSSAIRE."js/gloss_adm_js.php?&amp;lng=".$sl."\"></script>\n";
 $hjs .= "<script type=\"text/javascript\" src=\"".PATH_GLOSSAIRE."js/val_suppr_for_ie.js\"></script>\n";
 
+if(function_exists('XH_registerStandardPluginMenuItems')) {
+    XH_registerStandardPluginMenuItems(true);
+}
 if (function_exists('XH_wantsPluginAdministration') 
     && XH_wantsPluginAdministration('glossaire') 
     || isset($glossaire) && $glossaire == 'true') {
@@ -35,7 +38,7 @@ if (function_exists('XH_wantsPluginAdministration')
        $o .= '<h1>'.ADMIN_TITLE.'</h1>
        <div id="intro">
        <p>
-       <img class="glossaire_icon" src="'.PATH_GLOSSAIRE.'img/glossaire_icon.png" /><br />'
+       <img class="glossaire_icon" src="'.PATH_GLOSSAIRE.'img/glossaire_icon.png" /><br>'
        .ADMIN_INTRO.
        '</p>
        <p>Version '.GLOSS_VERSION.'</p>
@@ -50,9 +53,9 @@ if (function_exists('XH_wantsPluginAdministration')
        more details.</p>
        <p>You should have received a copy of the GNU General Public License along with this program. 
        If not, see <a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.</p>
-       <p>Credits :<br />
-       The <b>German</b> translation (<b>de</b> language and help files) is provided by <a href="http://home.michael-zajusch.de/" target="_blank">Michael Zajusch</a><br /> 
-       The <b>Slovak</b> translation (<b>sk</b> language file) is provided by <a href="http://www.cmsimpleforum.com" target="_blank">Tata</a><br /> 
+       <p>Credits :<br>
+       The <b>German</b> translation (<b>de</b> language and help files) is provided by <a href="http://home.michael-zajusch.de/" target="_blank">Michael Zajusch</a><br> 
+       The <b>Slovak</b> translation (<b>sk</b> language file) is provided by <a href="http://www.cmsimpleforum.com" target="_blank">Tata</a><br> 
        The <b>Czech</b> translation (<b>cs</b> language file) is provided by <a href="http://oldnema.compsys.cz/en/?Demo_templates" target="_blank">Oldnema</a></p> 
        <p>Thanks to <a href="http://www.freeiconspng.com/free-images/book-icon-133" target="_blank">freeiconspng.com</a> for images used to create plugin icon.</p>
        </div>';
@@ -79,18 +82,24 @@ if (function_exists('XH_wantsPluginAdministration')
        if ((is_numeric($def)) && ($glsend != 1)) {$defchoix = 1;}
        if ($def == "new") {$defchoix = 2;}
 
-       switch ($defchoix) {  
-        case "0":       
-                  
+       switch ($defchoix) {
+        case "0":
+
          /////////////////////// Affichage, modification et écriture d'une définition ////////////////////
          global $contenu1, $tit, $mot, $deftxt, $deftit, $defmot, $defconf0, $defconf1;
 
-         if ($glsend == 1){  
+         if ($glsend == 1){
 
             // écriture de la définition
 
             if (preg_match("`[&#;]`", (string) $mot)) {
-               $o .= XH_message('warning', "<p><u>".$plugin_tx['glossaire']['admin_msg_warning_last_word']."</u><br /><b>".$mot."</b><br />".$plugin_tx['glossaire']['admin_msg_dont_copy_past']."</p>");
+                $o .= XH_message('warning', "<p><u>"
+                    . $plugin_tx['glossaire']['admin_msg_warning_last_word']
+                    . '</u><br><b>'
+                    . $mot
+                    . '</b><br>'
+                    . $plugin_tx['glossaire']['admin_msg_dont_copy_past']
+                    . '</p>');
             }
 
             $contenu1 = import('contenu1', 'POST', FALSE);
@@ -103,23 +112,22 @@ if (function_exists('XH_wantsPluginAdministration')
             $defconf1 = addslashes(import('defconf1', 'POST'));
             if ($defmot != "") {          
                EcriDef();
-          
+
                // écriture du mot dans la liste des mots
-               ModifMot($numdef);          
-            }                           
+               ModifMot($numdef);
+            }
          } // fin if $glsend == 1
 
          //suppressions
          if ((isset($suppr)) && (is_numeric($suppr)) && ($suppr == 1)){  
-            $mot = $_POST['mot'];                    
-            if (is_array($mot)) {                
-               SupprMot($mot);          
+            $mot = $_POST['mot'];
+            if (is_array($mot)) {
+               SupprMot($mot);
             }
          }
-        
+
          $o .= '<div id="gest_mots">';
-        
-                                     
+
          //affichage de la liste des mots 
          //==============================
         
@@ -138,16 +146,16 @@ if (function_exists('XH_wantsPluginAdministration')
          else {
               $let = import('let', 'GET');
          }
-         if (($let != "all") && (preg_match("`\p{L}`u", $let))){    
-            $cpt = count($lignes);                            
+         if (($let != "all") && (preg_match("`\p{L}`u", $let))){
+            $cpt = count($lignes);
                if (preg_match("`\p{L}`u", $let)){
                   for($i=0; $i<$cpt; $i++){
-                     if (!preg_match("`^$let`ui",OteAccents($lignes[$i][1]))){      
-                        unset($lignes[$i]);                              
-                        $lignes = array_values($lignes);                 
-                        $i--;                                           
+                     if (!preg_match("`^$let`ui",OteAccents($lignes[$i][1]))){
+                        unset($lignes[$i]);
+                        $lignes = array_values($lignes);
+                        $i--;
                      }
-                     $cpt = count($lignes);                                   
+                     $cpt = count($lignes);  
                   }
                }
          }
@@ -161,9 +169,9 @@ if (function_exists('XH_wantsPluginAdministration')
          $choix = import('choix', 'POST');
          $img_on = "tri_on";
          $img_off = "tri_off";
-         $choix_tri = 1;               
+         $choix_tri = 1;
          $img_nr = $img_off;
-         $img_mot = $img_on;         
+         $img_mot = $img_on;
         
          switch ($choix) {
           case "0":
@@ -190,15 +198,15 @@ if (function_exists('XH_wantsPluginAdministration')
          if (is_array($lignes)) {array_key_multi_sort($lignes, $choix_tri , $strnat='strnatcasecmp');}
          //fin du tri
 
-         $o .= '<br />
+         $o .= '<br>
          <fieldset class="title">'
          .$plugin_tx['glossaire']['admin_handle_the_words_title'].
          '<span style="float:right;">'
          .language_choice().
          '</span>
-         <br />
+         <br>
          </fieldset>
-         <br />';
+         <br>';
 
         
          //Affichage du filtre alphabétique avec liste A|B|C|....|Z|Tous
@@ -234,17 +242,17 @@ if (function_exists('XH_wantsPluginAdministration')
          // quelque soit le tri effectué).
          affiche_mots();
         
-         $o .= '<br />
+         $o .= '<br>
          <fieldset>
          <legend align="center">'
          .$plugin_tx['glossaire']['admin_list_title'].
          '</legend>
-         <br />'
+         <br>'
          .$motaff.
-         '<br />
+         '<br>
          </fieldset>
          </div>
-         <br />';
+         <br>';
          //Fin affichage du tableau
         
         break;       //fin pas de paramètre def
@@ -285,14 +293,14 @@ if (function_exists('XH_wantsPluginAdministration')
         case "2":
          $o .= '
          <div id="gloss_edit">
-         <br />
+         <br>
          <fieldset class="title">'
          .$plugin_tx['glossaire']['admin_edit_page_title'].
-         '<br />
+         '<br>
          </fieldset>
-         <br />
+         <br>
          <fieldset>
-         <br />
+         <br>
          <form name="adminsend" id="adminsend" action="?&amp;glossaire&amp;admin=plugin_main&amp;action=plugin_text&amp;normal#haut_gl" method="post">
          <input type="hidden" name="glsend" value="1" />';
         
@@ -313,12 +321,12 @@ if (function_exists('XH_wantsPluginAdministration')
          <td><input type="text" name="tit" value="'.$tit.'" /></td>
          </tr>
          </table>
-         <br /><br />
+         <br><br>
          <a name="definition1"></a>
          <label for="contenu1">
          &nbsp;&nbsp;<b>'.$plugin_tx['glossaire']['admin_editor_title'].'</b>
          </label>
-         <br /><br />';
+         <br><br>';
 
          // Affichage de l'éditeur
 
@@ -326,9 +334,9 @@ if (function_exists('XH_wantsPluginAdministration')
          <textarea name="contenu1" class="contenu1" style="width: 100%;" rows="30" cols="80">'
          .$contenu1.
          '</textarea>
-         <br />
+         <br>
          </fieldset>
-         <br />
+         <br>
          <fieldset>
          <table cellspacing="0" cellpadding="4" align="center" border="0" width="100%">
          <tr style="text-align:left;">
@@ -348,7 +356,7 @@ if (function_exists('XH_wantsPluginAdministration')
          </tr>
          </table>
          </fieldset>
-         <br />
+         <br>
          <fieldset>
          <table cellspacing="0" cellpadding="4" align="center" border="0" width="100%">
          <tr style="text-align:left;">
@@ -372,7 +380,7 @@ if (function_exists('XH_wantsPluginAdministration')
          <input class="submit" type="submit" form="adminsend" value="'.$plugin_tx['glossaire']['admin_button_save'].'" />
          </p>
          </form>
-         <br />
+         <br>
          </div>';
         
          init_editor(array('contenu1'));
@@ -423,10 +431,10 @@ if (function_exists('XH_wantsPluginAdministration')
        if ($tpl_choosen != '') {
           $cf['site']['template']=$tpl_choosen; 
           $pth['folder']['template']=$pth['folder']['templates'].$cf['site']['template'].'/';
-          $pth['file']['template']=$pth['folder']['template'].'template.htm'; 
-          $pth['file']['stylesheet']=$pth['folder']['template'].'stylesheet.css'; 
-          $pth['folder']['menubuttons']=$pth['folder']['template'].'menu/'; 
-          $pth['folder']['templateimages']=$pth['folder']['template'].'images/'; 
+          $pth['file']['template']=$pth['folder']['template'].'template.htm';
+          $pth['file']['stylesheet']=$pth['folder']['template'].'stylesheet.css';
+          $pth['folder']['menubuttons']=$pth['folder']['template'].'menu/';
+          $pth['folder']['templateimages']=$pth['folder']['template'].'images/';
        }
        
        // Controle du fichier template.htm et mise à jour config si code absent alors qu'état ACTIF
@@ -501,7 +509,7 @@ if (function_exists('XH_wantsPluginAdministration')
                    } else if (window.attachEvent) {
                    window.attachEvent('onload', apply_ap_styles);
                    }     
-        </script>\n";        
+        </script>\n";
                 
           // écriture du fichier de configuration 
           $rec = '<?php 
@@ -545,7 +553,7 @@ if (function_exists('XH_wantsPluginAdministration')
                    window.attachEvent('onload', validTpl);
            }
            //]]>
-          </script>";        
+          </script>";
        }  //fin cas formulaire config envoyé
         
         
@@ -621,7 +629,7 @@ if (function_exists('XH_wantsPluginAdministration')
         
         //Choix TEMPLATE
         $o .= '
-        <br />
+        <br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_txt_template_choice'].
@@ -675,12 +683,12 @@ if (function_exists('XH_wantsPluginAdministration')
         
         // Etat du plugin pour le template en cours (actif ou désactivé)
         $o .= '
-        <br />
+        <br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_plugin_state_title'].
         '</legend>
-        <br />';
+        <br>';
         ($desactiv == 'on') ?  $o .= '<p style="text-align:center;">'.$plugin_tx['glossaire']['admin_txt_disabled'].'</p>'
         : $o .= '<p style="text-align:center;">'.$plugin_tx['glossaire']['admin_txt_active'].' <input type="checkbox" name="desactiv" '.(($desactiv)? "checked":'').' /></span></p>';
         $o .= '
@@ -688,12 +696,12 @@ if (function_exists('XH_wantsPluginAdministration')
 
         // Activation pour les newsbox
         $o .= '
-        <br />
+        <br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_newsboxes_activation_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" align="center" border="0" width="100%">
         <tr style="text-align:left;">
         <td>
@@ -716,12 +724,12 @@ if (function_exists('XH_wantsPluginAdministration')
         </fieldset>';
         
         // Choix nombre d'occurrences
-        $o .= '<br />
+        $o .= '<br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_occurrence_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" align="center" border="0" width="100%">
         <tr style="text-align:left;">
         <td>
@@ -742,12 +750,12 @@ if (function_exists('XH_wantsPluginAdministration')
         </fieldset>';
         
         // Largeur définitions
-        $o .= '<br />
+        $o .= '<br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_definition_width_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" style="text-align:center;border:0;width:100%">
         <tr style="text-align:left;">
         <td style="padding-right:30px;">
@@ -773,19 +781,19 @@ if (function_exists('XH_wantsPluginAdministration')
         </fieldset>';
         
         // ASPECT OCCURRENCES (Titre)
-        $o .= '<br /><br />
+        $o .= '<br><br>
         <fieldset class="title">'
         .$plugin_tx['glossaire']['admin_occurrence_aspect_title'].
-        '<br />
+        '<br>
         </fieldset>';
         
         // Aspect occurrences (type et couleur souligné)
-        $o .= '<br />
+        $o .= '<br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_occurrence_aspect_legendtitle'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" style="text-align:center;border:0;width:100%">
         <tr style="text-align:left;">
         <td>
@@ -813,22 +821,22 @@ if (function_exists('XH_wantsPluginAdministration')
         </tr>
         </table>
         </fieldset>
-        <br />';
+        <br>';
         
         // ASPECT des DEFINITIONS (Titre)
-        $o .= '<br />
+        $o .= '<br>
         <fieldset class="title">'
         .$plugin_tx['glossaire']['admin_definition_aspect_title'].
-        '<br />
+        '<br>
         </fieldset>
-        <br />';
+        <br>';
         
         // Titres des définitions (background, couleur, font, taille)
         $o .= '<fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_definition_title_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" style="text-align:center;border:0;width:100%">
         <tr style="text-align:left;">
         <td>
@@ -883,12 +891,12 @@ if (function_exists('XH_wantsPluginAdministration')
         </fieldset>';
         
         // Définitions (background, couleur, font, taille)
-        $o .= '<br />
+        $o .= '<br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_definition_text_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" style="text-align:center;border:0;width:100%">
         <tr style="text-align:left;">
         <td>
@@ -936,12 +944,12 @@ if (function_exists('XH_wantsPluginAdministration')
         </tr>
         </table>
         </fieldset>
-        <br />
+        <br>
         <fieldset>
         <legend align="center">'
         .$plugin_tx['glossaire']['admin_definition_border_title'].
         '</legend>
-        <br />
+        <br>
         <table cellspacing="0" cellpadding="4" style="text-align:center;border:0;width:100%">
         <tr style="text-align:left;">
         <td>
@@ -964,7 +972,7 @@ if (function_exists('XH_wantsPluginAdministration')
         </td></tr>
         </table>
         </fieldset>
-        <br />
+        <br>
         <p style="text-align:center;">
         <input class="submit" type="submit" form="adminconfig" value="'.$plugin_tx['glossaire']['admin_button_save'].'" />
         </p>
@@ -975,7 +983,7 @@ if (function_exists('XH_wantsPluginAdministration')
         <div class="apercu">
         <div class="pp" id="ap_def">
         <div id="ap_titre"><h4>'.$plugin_tx['glossaire']['admin_txt_apercu_title'].'</h4></div>
-        <div class="def" id="ap_txtdef"><p>'.$plugin_tx['glossaire']['admin_txt_apercu_txt1'].'<br /><br />'.$plugin_tx['glossaire']['admin_txt_apercu_txt2'].'</p></div>
+        <div class="def" id="ap_txtdef"><p>'.$plugin_tx['glossaire']['admin_txt_apercu_txt1'].'<br><br>'.$plugin_tx['glossaire']['admin_txt_apercu_txt2'].'</p></div>
         </div>
         </div>
         </div>
