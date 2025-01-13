@@ -2,10 +2,14 @@
  * ==================================================================
  * Plugin GLOSSAIRE_XH for CMSimple_XH (1.7.x)
  * ==================================================================
- * Version:    2.0.1 - sept 2020
- * Copyright:  Ludovic AMATHIEU
- * Website:    https://www.f5swn.fr/en/ (and contact)
- * License:    GNU GPLv3 - http://www.gnu.org/licenses/gpl-3.0.en.html
+ * @version:    2.0.2 - 2025 01 13
+ * @copyright  Ludovic AMATHIEU
+ * @author    https://www.f5swn.fr/en/ (and contact)
+ *
+ * @copyright 2024 The CMSimple_XH developers <http://cmsimple-xh.org/?The_Team>
+ * @author    The CMSimple_XH developers <devs@cmsimple-xh.org>
+ *
+ * @license    GNU GPLv3 - http://www.gnu.org/licenses/gpl-3.0.en.html
  * ==================================================================
   
      Une partie de ce script javascript provient du site : http://css.alsacreations.com/

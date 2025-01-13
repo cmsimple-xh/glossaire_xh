@@ -1,5 +1,18 @@
 <?php
-
+/*
+ * ==================================================================
+ * Plugin GLOSSAIRE_XH for CMSimple_XH (1.7.x)
+ * ==================================================================
+ * @version:    2.0.2 - 2025 01 13
+ * @copyright  Ludovic AMATHIEU
+ * @author    https://www.f5swn.fr/en/ (and contact)
+ *
+ * @copyright 2024 The CMSimple_XH developers <http://cmsimple-xh.org/?The_Team>
+ * @author    The CMSimple_XH developers <devs@cmsimple-xh.org>
+ *
+ * @license    GNU GPLv3 - http://www.gnu.org/licenses/gpl-3.0.en.html
+ * ==================================================================
+ */
 $plugin_tx['glossaire']['menu_main']="Worte und Definitionen";
 $plugin_tx['glossaire']['frontend_print_title']="Glossar";
 $plugin_tx['glossaire']['frontend_msg_def_lost']="An den Webmaster: Im Plugin Glossaire_XH fehlt die Definitionsdatei, deren Id-Nummer ist =";
