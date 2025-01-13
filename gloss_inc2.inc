@@ -122,12 +122,19 @@ if ($lefichier != ""){   //si la liste n'est pas vide
              $defconf1 = "";
              $largconf = "";
              $defact = "";
-             $hdeb = "<div><h4>";
-             $hfin = "</h4></div>";
+             $hdeb = "<div class=\"gl_title\"><p>";
+             $hfin = "</p></div>";
              $figdef = "";
 
-             if ($count != 0) { //Si un remplacement a eu lieu
-                $pos = "<div id=\"gpop".$lignes[$b][0];
+             //if ($count != 0) { //Si un remplacement a eu lieu
+             if ($count != 0 || $h[$s] == 'Glossar') { //Si un remplacement a eu lieu
+             if ($h[$s] == 'Glossar') {
+                 $showGloss = " showGloss";
+             } else {
+                 $showGloss = "";
+             }
+            
+                $pos = "<div id=\"gpop ".$lignes[$b][0];
                 if (strpos_arr($deffin_arr, $pos)=== false) { // définition chargée si absente
                     if(file_exists(PATH_GLOSS_DATA.$sl."/def_".$lignes[$b][0].INCEXT)) {
                         include(PATH_GLOSS_DATA.$sl."/def_".$lignes[$b][0].INCEXT);
@@ -138,8 +145,8 @@ if ($lefichier != ""){   //si la liste n'est pas vide
                     }
 
                     if ($deftit == ""){  //suppression de la barre titre si le champ titre est vide.
-                        $hdeb = "<div><h4 class=\"impr\">".$lemotabbr;  //Le mot est utilisé comme titre, seulement à l'impression
-                        $hfin = "</h4></div>";
+                        $hdeb = "<div><p class=\"impr\">".$lemotabbr;  //Le mot est utilisé comme titre, seulement à l'impression
+                        $hfin = "</p></div>";
                     }
                     $glnb = ($cindex[$iggg]['type'] == 'news') ? " gloss_nb" : ""; // class ajoutée aux def *exclusives* aux newsboxes
                     $largconf = ($defconf0 == "") ? $largconf = " larg1" : $largconf = " larg2"; // sélection option définition élargie
@@ -166,7 +173,7 @@ if ($lefichier != ""){   //si la liste n'est pas vide
        foreach($deffin_arr as $def) {
           $deffin .= $def."\n";
        }
-       $titpied = $version."<div class=\"impr\" style=\"text-align:center;\"><h3>".$plugin_tx['glossaire']['frontend_print_title']."</h3></div>";
+       $titpied = $version."<div class=\"impr" . $showGloss . "\" style=\"text-align:center;\"><p class=\"print_title\">".$plugin_tx['glossaire']['frontend_print_title']."</p></div>";
       //titre du glossaire en bas de page, qu'à l'impression
     }
     else { $titpied = $version; }
