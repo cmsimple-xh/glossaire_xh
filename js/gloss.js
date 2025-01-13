@@ -83,7 +83,7 @@ function stopDelai()
 function demarreDelai()
 {
   if (delai==null)
-  {delai = setTimeout("ferm();","500");}
+  {delai = setTimeout("ferm();","900");}
 }
 
 function ctrl(e)
