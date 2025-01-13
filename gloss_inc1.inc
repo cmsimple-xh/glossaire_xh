@@ -222,9 +222,9 @@ function pluriel_it($var) {
    $replace = array(
       '($1|la)',
       '($1|oi)',
-      '($1|ci|chi|che)',                
+      '($1|ci|chi|che)',
       '($1|chi|che)',
-      '($1|gi|ghi|ghe)',                
+      '($1|gi|ghi|ghe)',
       '($1|ghe)',
       '($1|e|ie)',
       '($1|ini|ei|a||i)',
@@ -273,7 +273,7 @@ function pluriel_nl($var) {
 function pluriel_ru($var) {
    $search = array(
       '`(к|г|х|ш|щ|ж|ч)(а|о|у|э|ы|ь)?(?!\pL)`u',
-      '`(?<![\(\|])(е)(?!\pL)(?![\(\|])`u',       
+      '`(?<![\(\|])(е)(?!\pL)(?![\(\|])`u',
       '`(?<![\(\|])(o)(?!\pL)(?![\(\|])`u',
       '`(?<![\(\|])(a)(?!\pL)(?![\(\|])`u',
       '`(?<![\(\|])(я|ь|й)(?!\pL)(?![\(\|])`u',

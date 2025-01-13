@@ -60,7 +60,7 @@ function init_Glossaire(){
          include(PATH_GLOSSAIRE."gloss_inc2".INCEXT);
      }
     }
-}  
+}
 
 // définition template en cours / template choisi dans select de la configuration
 $tpl_choosen =  import('tpl_choosen', 'POST'); // issu du select liste des templates

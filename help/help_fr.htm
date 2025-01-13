@@ -15,7 +15,7 @@
 
           href="https://www.f5swn.fr/?Plugins/Glossaire" target="_blank">Glossaire_XH
           v2</a> pour <a target="_blank" title="CMSimple_XH FR" href="http://www.cmsimple-xh.fr/">CMSimple_XH</a>
-        (A partir de la version <b>1.7</b>). <br />
+        (A partir de la version <b>1.7</b>). <br>
       </p>
       <div class="fr" id="generated-toc"> </div>
       <div class="pl_icon"><img title="Plugin Glossaire_XH" alt="Plugin Glossaire_XH"
@@ -38,8 +38,8 @@
         <li>L'aspect de la définition affichée est configurable pour chaque
           template.</li>
         <li>Site multilingue pris en charge.</li>
-        <li>Reconnaissance des pluriels intégrée (pour les langues supportées).<br />
-          <br />
+        <li>Reconnaissance des pluriels intégrée (pour les langues supportées).<br>
+          <br>
           L'intervention sur le texte n'a lieu qu'au niveau de la variable du
           contenu et juste avant l'affichage de l'article. Les listes de mots
           (une par langue) et les définitions associées sont enregistrées au
@@ -55,12 +55,12 @@
           Créer le mot dans sa forme indéfinie. Dès lors, le détecteur de
           pluriel trouvera la version définie ainsi que les pluriels associés.
           Exemple pour une voiture = bil, les mots bilen, biler, bilerne seront
-          également détectés.<br />
-          <br />
+          également détectés.<br>
+          <br>
           Slovaque et Tchèque : Créer le mot dans sa forme nominative (basique).
           Le détecteur essaiera de trouver les autres formes (génitive, dative,
-          accusative, vocative, locative, instrumentale) et leurs pluriels.<br />
-          Seuls les noms sont concernés et tous les cas ne sont pas prévus.<br />
+          accusative, vocative, locative, instrumentale) et leurs pluriels.<br>
+          Seuls les noms sont concernés et tous les cas ne sont pas prévus.<br>
         </span></p>
       <p>L'administration est disponible dans les langues suivantes (par défaut
         en anglais) :</p>
@@ -102,7 +102,7 @@
         exemple,  les dossiers doivent avoir un chmod = 705 et les fichiers, 604
         (le plus permissif pour les fichiers et les scripts étant 755). </p>
       <p>Vérifiez cela à l'aide de votre logiciel FTP (<i>Filezilla</i> par
-        exemple) avec lequel vous pouvez ajuster les chmod.<br />
+        exemple) avec lequel vous pouvez ajuster les chmod.<br>
       </p>
       <p style="margin-left: 40px;"><span style="font-style: italic;">Exemple
           OVH avec <span style="font-weight: bold;">Filezilla</span></span><br
@@ -122,14 +122,14 @@
             dans les sous-dossiers</span>"</span><br style="font-style: italic;" />
         <span style="font-style: italic;">Cochez "<span style="font-weight: bold;">Appliquer
             uniquement aux dossiers</span>".</span><br style="font-style: italic;" />
-        <span style="font-style: italic;"><span style="font-weight: bold;">Validez</span>.</span><br />
+        <span style="font-style: italic;"><span style="font-weight: bold;">Validez</span>.</span><br>
       </p>
       <p> Pour utiliser le plugin, il suffit de valider une première fois la
         configuration (page Configuration) pour le template utilisé. Le fichier
         template.htm de votre template sera modifié en y ajoutant <span style="font-weight: bold;">init_Glossaire()</span>.
         Une copie du fichier original est également réalisée (template.htm.bak).
-        <br />
-        <br />
+        <br>
+        <br>
         Selon les limitations de votre hébergeur, l'opération peut ne pas être
         possible; Dans ce cas un message vous invitera à réaliser l'ajout
         manuellement en éditant le fichier template.htm de votre template. Il
@@ -151,56 +151,56 @@
       <p>Cette page vous permet pour chaque template de :</p>
       <ul>
         <li><span style="font-weight: bold;">Désactiver le plugin pour vos
-            visiteurs</span>.<br />
+            visiteurs</span>.<br>
           Si le plugin est désactivé pour un template, les fichiers nécessaires
           à son fonctionnement ne sont plus appelés depuis le head de la page -<span
 
             style="font-style: italic;">sauf si vous êtes connecté en admin</span>-
-          et init_Glossaire() est supprimé dans template.htm.<br />
-          <br />
+          et init_Glossaire() est supprimé dans template.htm.<br>
+          <br>
           <span style="font-weight: bold;"></span></li>
-        <li><span style="font-weight: bold;">Activer le plugin pour les newsbox</span>.<br />
+        <li><span style="font-weight: bold;">Activer le plugin pour les newsbox</span>.<br>
           Si vous souhaitez que le plugin intervienne aussi dans le texte de vos
-          newsbox.<br />
-          <br />
+          newsbox.<br>
+          <br>
           <span style="font-weight: bold;"></span></li>
         <li><span style="font-weight: bold;">Configurer le nombre d'occurrences
-            à remplacer dans les articles</span>.<br />
+            à remplacer dans les articles</span>.<br>
           Entrez un nombre (par exemple 1 si vous désirez que seule la première
           occurrence du mot apparaissant dans l'article soit "définie"). Si vous
           désirez que toutes les occurrences soit traitées, Entrez -1 (le signe
           moins suivi du chiffre un, sans espace) [ne mettez rien d'autre dans
-          ce champ]<br />
-          <br />
+          ce champ]<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Déterminer la largeur d'affichage
-            de la définition</span>.<br />
+            de la définition</span>.<br>
           Dans le cas d'une définition longue (attention, ne pas oublier que les
           définitions sont ajoutées en fin d'articles, à l'impression), la
           largeur par défaut de l'affichage semblera insuffisante, le cadre
-          affiché s'étirant trop en hauteur. <br />
-          <br />
+          affiché s'étirant trop en hauteur. <br>
+          <br>
           Deux largeurs sont donc configurables: La première valeur "par défaut"
           est la largeur qui sera appliquée à toutes les définitions affichées.
           20em convient normalement très bien mais vous pouvez modifier cette
-          valeur.<br />
-          <br />
+          valeur.<br>
+          <br>
           Pourquoi "em" et pas "px": em est une unité relative qui permet le
           redimensionnement du texte. La définition affichée conservera ainsi
           ses proportions si le visiteur change la taille du texte affichée par
           son navigateur. La seconde valeur, fixée à 30em par défaut (vous pouvez
           aussi la modifier) sera la largeur de certaines définitions seulement,
-          à condition de cocher l'option au moment de l'édition de celles-ci.<br />
-          <br />
+          à condition de cocher l'option au moment de l'édition de celles-ci.<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Définir l'aspect de l'occurrence
-            dans l'article</span>. <br />
+            dans l'article</span>. <br>
           Le mot pourra être souligné d'un trait plein, de tirets ou de
-          pointillés dont vous pouvez choisir la couleur.<br />
-          <br />
+          pointillés dont vous pouvez choisir la couleur.<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Configurer l'aspect de la
-            définition affichée</span>. <br />
+            définition affichée</span>. <br>
           Vous pouvez définir la couleur de l'arrière-plan du titre et du texte,
           la couleur du titre et du texte, la police de caractère, la couleur
           des bordures.</li>
@@ -212,11 +212,11 @@
         reprend directement les réglages effectués dans la partie ASPECT de la
         configuration). Une fois le formulaire validé, le template reste
         sélectionné et affiché à moins d'en choisir un autre ou de changer de
-        page.<br />
-        <br />
+        page.<br>
+        <br>
         Important : Tant que la configuration pour un template n'a pas été
-        validée, le Glossaire ne fonctionne pas pour vos visiteurs. <br />
-        <br />
+        validée, le Glossaire ne fonctionne pas pour vos visiteurs. <br>
+        <br>
         Conseil : Faites plutôt des définitions courtes, quelque soit le domaine
         concerné.</p>
       <h2>V - Mots et Définitions</h2>
@@ -227,11 +227,11 @@
         la création d'un mot et sa définition, elle permet aussi de supprimer
         simplement un mot et sa définition.</p>
       <h4>5.1.1 - Le filtre</h4>
-      <p>Se présente sous la forme d'une liste alphabétique.<br />
+      <p>Se présente sous la forme d'une liste alphabétique.<br>
         Si vous cliquez sur une lettre du filtre, le tableau sera filtré selon
         cette lettre et classé dans l'ordre alphabétique selon la colonne <span
 
-          style="font-weight: bold;">Mots</span>.<br />
+          style="font-weight: bold;">Mots</span>.<br>
       </p>
       <h4>5.1.2 - Le tri</h4>
       <p>Chaque titre de colonne du tableau (<span style="font-weight: bold;">Id</span>,
@@ -286,7 +286,7 @@
         plusieurs liens, par exemple. Un bouton de fermeture est alors ajouté
         dans son angle supérieur droit (Elle se fermera également si un autre
         mot défini est survolé). Sans cocher cette option, la définition se
-        ferme dès que le curseur n'est plus au-dessus.<br />
+        ferme dès que le curseur n'est plus au-dessus.<br>
       </p>
       <p>Une fois le formulaire renseigné, cliquez sur "<span style="font-weight: bold;">Enregistrer</span>",
         tout en bas.</p>
@@ -311,104 +311,104 @@
         un fichier javascript que vous nommerez <span style="font-weight: bold;">fonct_util.js</span>
         et que vous placerez dans le dossier js du plugin
         (plugins/glossaire/js/). Il devra contenir les fonctions suivantes qui
-        devront être adaptées au lecteur utilisé :<br />
-        <br />
-        Pour la lecture : <b>demLect(id)</b><br />
-        Pour stopper : <b>stopLect(id)<br />
-        </b><br />
+        devront être adaptées au lecteur utilisé :<br>
+        <br>
+        Pour la lecture : <b>demLect(id)</b><br>
+        Pour stopper : <b>stopLect(id)<br>
+        </b><br>
         où <b>id</b> représente l'id de la balise <i>object</i> du lecteur. Il
         faudra ajouter un id à la balise <i>object</i> de votre lecteur sous la
         forme suivante : vidgpop + le numéro d'id du mot auquel se rapporte la
         définition (l'id se trouve en haut du formulaire de création/édition du
-        mot concerné)<br />
-        <br />
+        mot concerné)<br>
+        <br>
         Par exemple, pour la définition du mot id n°<b>35</b>, on aura
         &lt;object id="vidgpop<b>35</b>"...</p>
       <h4>5.3.1 - Exemple concret</h4>
       <ul>
         <li><span style="text-decoration: underline;">1) Le choix des lecteurs</span>
-          (ou 'players')<br />
+          (ou 'players')<br>
           Il s'agit de lecteurs flash. L'intérêt étant que ceux-ci se trouvent
           coté serveur (sur votre site, donc) et qu'ils s'afficheront
-          pratiquement sur toutes les configurations. <br />
+          pratiquement sur toutes les configurations. <br>
           Il s'agit, pour la vidéo de <span style="font-weight: bold;">flv-player</span>
           : <a target="_blank" href="http://flv-player.net/players/maxi/preview/">http://flv-player.net/players/maxi/preview/</a>
-          <br />
+          <br>
           et pour l'audio, <span style="font-weight: bold;">Flash mp3 player</span>
           : <a target="_blank" href="http://flash-mp3-player.net/fr/players/maxi/">http://flash-mp3-player.net/fr/players/maxi/</a>
-          <br />
+          <br>
           Tous deux sont bien documentés et sont du même auteur ce qui est un
-          avantage car les commandes javascript sont les mêmes.<br />
-          <br />
+          avantage car les commandes javascript sont les mêmes.<br>
+          <br>
         </li>
         <li>2)<span style="text-decoration: underline;"> Installation des
-            fichiers</span><br />
+            fichiers</span><br>
           Télécharger les lecteurs et les placer dans le dossier
-          userfiles/media/<br />
-          <br />
+          userfiles/media/<br>
+          <br>
         </li>
         <li>3) <span style="text-decoration: underline;">Création du fichier
-            fonct_util.js</span><br />
+            fonct_util.js</span><br>
           On peut utiliser un éditeur pour cela mais un simple fichier texte
-          créé à l'aide du bloc-notes de Windows suffit.<br />
+          créé à l'aide du bloc-notes de Windows suffit.<br>
           Clic droit, nouveau, document texte, l'ouvrir et y copier/coller le
           code suivant :
-          <pre class="brush:js;">function demLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsPlay", "");<br />}<br />function stopLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsStop", "");<br />}</pre>
-          <br />
+          <pre class="brush:js;">function demLect(id){<br>var elt= document.getElementById(id);<br>if (elt != null) elt.SetVariable("player:jsPlay", "");<br>}<br>function stopLect(id){<br>var elt= document.getElementById(id);<br>if (elt != null) elt.SetVariable("player:jsStop", "");<br>}</pre>
+          <br>
           Sauvegarder le fichier et le renommer<span style="font-weight: bold;">
-            fonct_util.js</span><br />
+            fonct_util.js</span><br>
           Enfin, le charger dans le dossier js du glossaire (dans
-          plugins/glossaire/js/)<br />
-          <br />
+          plugins/glossaire/js/)<br>
+          <br>
           Le script du glossaire se chargera de reconnaître la présence du
           fichier et d'utiliser les fonctions demLect et stopLect le moment
-          venu.<br />
-          <br />
+          venu.<br>
+          <br>
         </li>
         <li>4) <span style="text-decoration: underline;">Insertion du lecteur
-            vidéo dans une définition</span>.<br />
+            vidéo dans une définition</span>.<br>
           Par exemple, un mot dont l'id est <span style="font-weight: bold;">43</span>
           (cet id apparaît dans la liste des mots). Une vidéo .flv va être
           insérée dans sa définition. Le fichier vidéo est nommé video.flv (dans
           cet exemple), le placer dans le dossier userfiles/media/. Pour créer
           les fichiers flv, il existe des convertisseurs gratuits. En voici un,
-          par exemple :<br />
-          <br />
+          par exemple :<br>
+          <br>
           <span style="font-weight: bold;">Free FLV Converter</span> sur <a target="_blank"
 
 href="http://www.koyotesoft.com/">http://www.koyotesoft.com/</a>
           Code inséré dans la définition, l'id <span style="font-weight: bold;">vidgpop43</span>
           est ajouté :
-          <pre class="brush:php;">&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br /> &lt;/object&gt; </pre>
-          <br />
+          <pre class="brush:php;">&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br> &lt;/object&gt; </pre>
+          <br>
           Les chemins peuvent être relatifs à la racine du site, comme
           ci-dessus. Le chemin du fichier flv est, quant à lui, relatif à
-          l'emplacement du lecteur.<br />
+          l'emplacement du lecteur.<br>
           <span style="text-decoration: underline;">Dans le cas d'un site
             multilingue :</span> Lorsqu'il ne s'agit pas de la langue principale
           du site, ajoutez <span style="font-weight: bold;">../</span> devant <span
 
-style="font-weight: bold;">userfiles/</span> comme ceci :<br />
+style="font-weight: bold;">userfiles/</span> comme ceci :<br>
           <pre class="brush:php;">data="<span style="font-weight: bold;">../</span>userfiles/media/player_flv_maxi.swf"</pre>
           Rappel important : Pour toute insertion dans une définition, il faut
           ajouter à la balise object, un id correspondant à l'id du mot en
           question (ici vidgpop43). C'est cet id qui sera ciblé par les
-          fonctions <span style="font-weight: bold;">demLect</span> et <span style="font-weight: bold;">stopLect</span>.<br />
-          <br />
+          fonctions <span style="font-weight: bold;">demLect</span> et <span style="font-weight: bold;">stopLect</span>.<br>
+          <br>
         </li>
         <li>5)<span style="text-decoration: underline;"> Insertion du lecteur
-            mp3</span><br />
+            mp3</span><br>
           Placer le fichier mp3 dans le dossier userfiles/media/ (ainsi que le
           lecteur s'il n'y est pas déjà). Même méthode que pour le fichier
           vidéo, exemple de code inséré dans la définition du mot dont l'id est
           <span style="font-weight: bold;">45</span> (le fichier mp3 de
           l'exemple se nomme eagles.mp3) et où l'id donné à la balise object
           devient donc <span style="font-weight: bold;">vidgpop45</span> :
-          <pre class="brush:php;"> &lt;object id="vidgpop45" type="application/x-shockwave-flash" data="userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br /> &lt;/object&gt;</pre>
+          <pre class="brush:php;"> &lt;object id="vidgpop45" type="application/x-shockwave-flash" data="userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br> &lt;/object&gt;</pre>
           Même remarque que pour les vidéos concernant les chemins en n'oubliant
           pas d'ajouter ../ devant userfiles/ lorsqu'il ne s'agit pas de la
-          langue principale du site (cas d'un site multilingue).<br />
-          <br />
+          langue principale du site (cas d'un site multilingue).<br>
+          <br>
           Enfin, l'option permettant de rendre figeable une définition peut être
           cochée (en bas de la page création/modification d'un mot) dans le cas
           de l'insertion d'un lecteur audio/vidéo. Le bouton de fermeture qui
@@ -429,14 +429,14 @@ style="font-weight: bold;">userfiles/</span> comme ceci :<br />
         longueur de l'article mais aussi de celle de ses définitions. L'intérêt
         de faire des définitions courtes prend ici tout son sens.</p>
       <p>Les définitions sont néanmoins affichées sur deux colonnes et dans une
-        taille de caractère réduite.<br />
+        taille de caractère réduite.<br>
       </p>
       <h2>VII - Désinstallation</h2>
       <p>Dans l'administration du plugin, page Configuration, désactivez le
-        plugin pour chaque template de la liste. <br />
+        plugin pour chaque template de la liste. <br>
         Cela revient à supprimer <span style="font-weight: bold;">init_Glossaire()</span>
-        dans le fichier template.htm de chaque template.<br />
-        <br />
+        dans le fichier template.htm de chaque template.<br>
+        <br>
         Puis supprimez tous les fichiers du plugin, cela revient à supprimer le
         dossier "<b>glossaire</b>":<em>   plugins/<b>glossaire</b>/</em></p>
         <h2>VIII - Téléchargement</h2>
@@ -447,6 +447,6 @@ target="_blank">Glossaire_XH v2</a></p>
       <p><b>Glossaire_XH</b> est sous licence <a target="_blank" title="GPLv3 LICENSE"
 
 href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>.</p>
-      <p><br /></p><p>© 2018 <a href="https://www.f5swn.fr/" target="_blank">Ludovic AMATHIEU</a></p>
+      <p><br></p><p>© 2018 <a href="https://www.f5swn.fr/" target="_blank">Ludovic AMATHIEU</a></p>
       <a href="#top_page" class="go_top">TOP</a> </div>
 </body></html>

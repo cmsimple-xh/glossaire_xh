@@ -15,7 +15,7 @@
 
           target="_blank">Glossaire_XH v2</a> for <a href="http://www.cmsimple-xh.org/"
 
-          title="CMSimple_XH" target="_blank">CMSimple_XH</a> (v<b>1.7.x</b>). <br />
+          title="CMSimple_XH" target="_blank">CMSimple_XH</a> (v<b>1.7.x</b>). <br>
       </p>
       <div id="generated-toc"> </div>
       <div class="pl_icon"><img src="help_files/glossaire_icon.png" alt="Plugin Glossaire_XH"
@@ -36,8 +36,8 @@
         <li>The aspect of the definition displayed is configurable for each
           template.</li>
         <li>Work on multilingual site.</li>
-        <li>Recognition of plural (for supported languages).<br />
-          <br />
+        <li>Recognition of plural (for supported languages).<br>
+          <br>
           The intervention on the text takes place at the level of the content
           variable and just before the display of the article. Word lists (one
           per language) and the associated definitions are stored in text format
@@ -52,11 +52,11 @@
           Create the word in its indefinite form. Therefore, the plural detector
           will find its definite form and the plurals (definite and indefinite).
           Example for a car = bil, the words bilen, biler, bilerne will be also
-          detected.<br />
-          <br />
+          detected.<br>
+          <br>
           Slovak and Czech : Create the word in its nominative form (basic). The
-          plural detector will try to find other forms and their plural.<br />
-          Only the names are concerned, and all cases are not provided.<br />
+          plural detector will try to find other forms and their plural.<br>
+          Only the names are concerned, and all cases are not provided.<br>
         </span> </p>
       <p>The administration is available in the following languages (default
         English):</p>
@@ -119,45 +119,45 @@
       <p>This page allows you for each template to : </p>
       <ul>
         <li><span style="font-weight: bold;">Disable the plugin on your site</span>
-          (underlined words and definitions overview).<br />
-          <br />
+          (underlined words and definitions overview).<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Activate the plugin for the
-            newsboxes</span>.<br />
-          If you want the plugin also works in the text of your newsboxes.<br />
-          <br />
+            newsboxes</span>.<br>
+          If you want the plugin also works in the text of your newsboxes.<br>
+          <br>
           <span style="font-weight: bold;"></span></li>
         <li><span style="font-weight: bold;">Configure the number of occurrences
-            to be replaced in article</span>.<br />
+            to be replaced in article</span>.<br>
           Enter a number (eg 1 if you want only the first occurrence of the word
           appearing in the article is "defined"). If you want all instances be
           treated, enter <span style="font-weight: bold;">-1</span> (minus sign
           followed by a number, no spaces) [do not put anything else in this
-          field]<br />
-          <br />
+          field]<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Determine the display width of the
             definition. </span>For a long definition (do not forget that the
           definitions are added at the end of articles, in source), the default
           width of the display appear insufficient, the displayed frame
-          stretching too high. <br />
-          <br />
+          stretching too high. <br>
+          <br>
           Two widths are configurable : The first "default" is the width that
           will be applied to all definitions displayed. 20em normally be fine
-          but you can change this value.<br />
-          <br />
+          but you can change this value.<br>
+          <br>
           Why "em" and not "px" : em is a relative unit that allows resizing
           text. The definition display and maintain its proportions if the
           visitor changes the text size displayed by the browser. The second
           value set at 30em default (you can change it) will be the width of
           only some definitions provided to check the option at the time of
-          publishing them.<br />
-          <br />
+          publishing them.<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Determine the aspect of the
             occurrence in the article</span>. The word will be underlined with a
-          solid line, dashed or dotted lines that you can choose the color.<br />
-          <br />
+          solid line, dashed or dotted lines that you can choose the color.<br>
+          <br>
         </li>
         <li><span style="font-weight: bold;">Determine the aspect of the
             definition displayed</span>. An preview of the aspect of the
@@ -168,8 +168,8 @@
         you to more easily compare with the definition preview of the right side
         form (this preview directly shows the settings in the ASPECT part of the
         configuration). Once the form is validated, the template is still
-        selected and displayed unless you choose another or choose another page.<br />
-        <br />
+        selected and displayed unless you choose another or choose another page.<br>
+        <br>
         Important: As long as the configuration template has not been validated,
         the plugin is not working for your visitors. </p>
       <p>Tip: Make rather short definitions, whatever the field.</p>
@@ -181,10 +181,10 @@
         word and its definition, it also allows to simply delete a word and its
         definition.</p>
       <h4>5.1.1 - The filter</h4>
-      <p>Comes in the form of an alphabetical list.<br />
+      <p>Comes in the form of an alphabetical list.<br>
         If you click on a letter of the filter, the table will be filtered
         according to the letter and classified in alphabetical order according
-        to the words column.<br />
+        to the words column.<br>
       </p>
       <h4>5.1.2 - Sorting</h4>
       <p>Each column heading in the table(<span style="font-weight: bold;">Id</span>,
@@ -239,7 +239,7 @@
         freeze after cursor mouseover its content. A close button is added in
         its upper right corner (It will also close if another definition is
         displayed). Without this option, the definition closes as soon as the
-        cursor is not over.<br />
+        cursor is not over.<br>
         This can be useful if the text contains several links, for example.</p>
       <p>Once the form is filled, click "<span style="font-weight: bold;">Save</span>"
         at the bottom.</p>
@@ -261,94 +261,94 @@
         You will need to create a javascript file named<span style="font-weight: bold;">
           fonct_util.js</span> and that you put in the js folder of the plugin
         (plugins/glossaire/js/). It should contain the following functions must
-        be adapted to the player used:<br />
-        <br />
-        For playback : <b>demLect(id)</b><br />
-        To stop : <b>stopLect(id)<br />
-        </b><br />
+        be adapted to the player used:<br>
+        <br>
+        For playback : <b>demLect(id)</b><br>
+        To stop : <b>stopLect(id)<br>
+        </b><br>
         where<span style="font-weight: bold;"> id</span> is the id of the player
         object tag . It will add an id to your object tag player as follows:
         vidgpop + the id number of the word to which the definition (the id is
-        at the top of the form creation/editing of the word) .<br />
-        <br />
+        at the top of the form creation/editing of the word) .<br>
+        <br>
         For example, the definition of id n°<b>35</b>, the id will be &lt;object
         id="vidgpop<b>35</b>"...</p>
       <h4>5.3.1 - Concrete Example</h4>
       <ul>
         <li><span style="text-decoration: underline;">1) Reader's Choice</span>
-          (or 'players')<br />
+          (or 'players')<br>
           These flash players. The advantage is that they will find server side
           (on your site, so) and they will be displayed on almost all
           configurations. It is, for video <span style="font-weight: bold;">flv
-            player</span> :<br />
+            player</span> :<br>
           <a target="_blank" href="http://flv-player.net/players/maxi/preview/">http://flv-player.net/players/maxi/preview/</a>
           and for audio, <span style="font-weight: bold;">Flash mp3 player</span>
-          :<br />
+          :<br>
           <a target="_blank" href="http://flash-mp3-player.net/fr/players/maxi/">http://flash-mp3-player.net/fr/players/maxi/</a>
           Both are well documented and are by the same author which is an
-          advantage because the javascript commands are the same.<br />
-          <br />
+          advantage because the javascript commands are the same.<br>
+          <br>
         </li>
-        <li>2)<span style="text-decoration: underline;"> Installation Files</span><br />
-          Download the players and place them in the folder userfiles/media/.<br />
-          <br />
+        <li>2)<span style="text-decoration: underline;"> Installation Files</span><br>
+          Download the players and place them in the folder userfiles/media/.<br>
+          <br>
         </li>
         <li>3) <span style="text-decoration: underline;">Create the file
-            fonct_util.js</span><br />
+            fonct_util.js</span><br>
           You can use an editor for this but a simple text file created using
-          Windows Notepad enough.<br />
+          Windows Notepad enough.<br>
           Right click, new, text document, open it and copy/paste the following
           code:
-          <pre class="brush:js;">function demLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsPlay", "");<br />}<br />function stopLect(id){<br />var elt= document.getElementById(id);<br />if (elt != null) elt.SetVariable("player:jsStop", "");<br />}</pre>
-          <br />
+          <pre class="brush:js;">function demLect(id){<br>var elt= document.getElementById(id);<br>if (elt != null) elt.SetVariable("player:jsPlay", "");<br>}<br>function stopLect(id){<br>var elt= document.getElementById(id);<br>if (elt != null) elt.SetVariable("player:jsStop", "");<br>}</pre>
+          <br>
           Save the file and rename it<span style="font-weight: bold;">
-            fonct_util.js</span><br />
+            fonct_util.js</span><br>
           Finally, load it in the js folder of Glossaire_XH (in
-          plugins/glossaire/js/)<br />
-          <br />
+          plugins/glossaire/js/)<br>
+          <br>
           The script of the glossary will be responsible for recognizing the
           presence of the file and use the functions demLect and stopLect when
-          the time comes.<br />
-          <br />
+          the time comes.<br>
+          <br>
         </li>
         <li>4) <span style="text-decoration: underline;">Insert the video
-            player in a definition</span>.<br />
+            player in a definition</span>.<br>
           For example, a word whose id is <span style="font-weight: bold;">43</span>
           (this id appears in the list of words). A video file .flv will be
           included in its definition. The video file is named video.flv (in this
           example), place it in the folder userfiles/media/. To create flv
-          files, there are free converters. Here is an example:<br />
-          <br />
+          files, there are free converters. Here is an example:<br>
+          <br>
           <span style="font-weight: bold;">Free FLV Converter</span> on <a target="_blank"
 
-href="http://www.koyotesoft.com/">http://www.koyotesoft.com/</a><br />
-          <br />
+href="http://www.koyotesoft.com/">http://www.koyotesoft.com/</a><br>
+          <br>
           Code inserted in the definition, id <span style="font-weight: bold;">vidgpop43</span>
           is added :
-          <pre>&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br /> &lt;/object&gt; </pre>
-          <br />
+          <pre>&lt;object id="vidgpop43" type="application/x-shockwave-flash" data="userfiles/media/player_flv_maxi.swf" width="320" height="240"&gt;<br> &lt;param name="movie" value="userfiles/media/player_flv_maxi.swf" /&gt;<br> &lt;param name="FlashVars" value="flv=video.flv" /&gt;<br> &lt;/object&gt; </pre>
+          <br>
           Paths can be relative to the root of the site, as above. The path of
-          the flv file, meanwhile, is relative to the location of the player.<br />
-          <br />
+          the flv file, meanwhile, is relative to the location of the player.<br>
+          <br>
           <span style="text-decoration: underline;">In the case of a <span style="font-weight: bold;">multilingual
               site</span></span>: When it is not the primary language of the
           site, add <span style="font-weight: bold;">../</span> before
-          userfiles/ like this:<br />
+          userfiles/ like this:<br>
           <pre>"<span style="font-weight: bold;">../</span>userfiles/media/player_flv_maxi.swf"</pre>
-          <br />
+          <br>
           Important reminder : For inclusion in a definition must be added to
           the object tag an id equal to the id of the word in question (here
           vidgpop43). This is the id that will be targeted by demLect and
-          stopLect functions.<br />
-          <br />
+          stopLect functions.<br>
+          <br>
         </li>
-        <li>5)<span style="text-decoration: underline;"> Insert the mp3 player</span><br />
+        <li>5)<span style="text-decoration: underline;"> Insert the mp3 player</span><br>
           Place the mp3 file into the folder userfiles/media/ (and the reader if
           it is not already). Same method as for the video file, sample code
           inserted in the definition of the word with id <span style="font-weight: bold;">45</span>
           (mp3 file of the example is called eagles.mp3) and where the id given
           to the object tag becomes <span style="font-weight: bold;">vidgpop45</span>:
-          <pre class="brush:php;">&lt;object id="vidgpop45" type="application/x-shockwave-flash" data="userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br /> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br /> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br /> &lt;/object&gt;</pre>
+          <pre class="brush:php;">&lt;object id="vidgpop45" type="application/x-shockwave-flash" data="userfiles/media/player_mp3_maxi.swf" width="200" height="20"&gt;<br> &lt;param name="movie" value="userfiles/media/player_mp3_maxi.swf" /&gt;<br> &lt;param name="FlashVars" value="mp3=eagles.mp3" /&gt;<br> &lt;/object&gt;</pre>
           Finally, the option to can freeze a definition can be checked (at the
           bottom of the create/edit page of a word) for the insertion of an
           audio/video player. The close button which then appears at the top
@@ -385,6 +385,6 @@ target="_blank" title="Glossaire_XH download">Glossaire_XH v2</a></p>
       <p><b>Glossaire_XH</b> is licensed under <a href="http://www.gnu.org/licenses/gpl.html"
 
 title="GPLv3 LICENSE" target="_blank">GPLv3</a>.</p>
-      <p><br /></p><p>© 2018 <a href="https://www.f5swn.fr/en/" target="_blank">Ludovic AMATHIEU</a></p>
+      <p><br></p><p>© 2018 <a href="https://www.f5swn.fr/en/" target="_blank">Ludovic AMATHIEU</a></p>
       <a class="go_top" href="#top_page">TOP</a> </div>
 </body></html>

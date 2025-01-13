@@ -68,7 +68,7 @@ function affiche_mots() {
    }
    else {
         $param_filtre = "";
-   }                                  
+   } 
    $form_tri_nr = "\n<form name=\"tri_nr\" action=\"#haut_gl\" method=\"post\">".$param_filtre."\n<input type=\"hidden\" name=\"choix\" value=\"0\" /><button type=\"submit\" class=\"".$img_nr."\"> Id</button></form>\n";
    $form_tri_mot = "\n<form name=\"tri_mot\" action=\"#haut_gl\" method=\"post\">".$param_filtre."\n<input type=\"hidden\" name=\"choix\" value=\"1\" /><button type=\"submit\" class=\"".$img_mot."\"> ".$plugin_tx['glossaire']['admin_txt_words']."</button></form>\n";
    $debform1 = "\n<thead><tr>\n<th class=\"th1\" scope=\"col\">".$form_tri_nr."</th>\n<th class=\"th2\" scope=\"col\">".$form_tri_mot."</th>\n";
@@ -156,15 +156,15 @@ function FindNrMax() {
   global $nrdispo,$lignes;
   $i = 0;
 
-  while (!empty ($lignes[$i][0])) {                
-     $tslesnr[$i] = $lignes[$i][0];            
+  while (!empty ($lignes[$i][0])) {
+     $tslesnr[$i] = $lignes[$i][0];
      $i++;
   }
-  if (empty ($lignes)) {                
+  if (empty ($lignes)) {
      $nrdispo = 1;
   }
   else {
-       $nrdispo = max($tslesnr)+1;          
+       $nrdispo = max($tslesnr)+1;
   }
   return $nrdispo;
 }
@@ -178,16 +178,16 @@ function SupprMot($nr) {
    
    //suppression du mot dans la liste
   $cptelist = count($lignes);
-  $cpte = count($nr);             
+  $cpte = count($nr);
   $i = 0;
-  while ($i<$cpte) {                          
-     $nrmot = $nr[$i];          
+  while ($i<$cpte) {
+     $nrmot = $nr[$i];
      $c = 0;
-     while ($c<$cptelist) {         
-        if ($lignes[$c][0] == $nrmot) {     
+     while ($c<$cptelist) {
+        if ($lignes[$c][0] == $nrmot) {
            $lignes[$c][0] = "";
-           $lignes[$c][1] = "";            
-                            
+           $lignes[$c][1] = "";
+
            //et suppression defx.inc correspondant
            if (file_exists(PATH_GLOSS_DATA.$sl."/def_".$nrmot.INCEXT)) {
            DeletDefDB(PATH_GLOSS_DATA.$sl."/def_".$nrmot.INCEXT);
@@ -259,27 +259,27 @@ function GlossActivation($template, $desactiv = '') {
     $init_code = '<?php init_Glossaire(); ?>';
     $fich = $pth['folder']['templates'].$template.'/template.htm';
     $fich_sauv = $fich.'.bak';
-    
+
     if (!$t = @fopen($fich,'r')) {
         $o .= '<div class="alert_activ">
                file template.htm can not be open, template : 
-               <b>'.$template.'</b><br /><br />function [<b>fopen()</b>] problem<br /><br />File path : '.$fich.'<br /><br />
+               <b>'.$template.'</b><br><br>function [<b>fopen()</b>] problem<br><br>File path : '.$fich.'<br><br>
                Please add <b>&lt;?php init_Glossaire(); ?&gt;</b> manually juste after &lt;/head&gt;, on same line and without space.
-               <br /></div>';
+               <br></div>';
         return;
     }
     $contenu = file_get_contents($fich);
     $manualMod = strpos($contenu, $init_code);
     $alreadyMod = strpos($contenu, $code_mod);
-    
+
     if (($alreadyMod === false) && ($manualMod !== false)) {
        fclose($t);
      $o .= '<div class="alert_activ">
-          You added the code &lt;?php init_Glossaire ?&gt; <u>manually</u>.<br /><br />
-          Please remove it and validate the Configuration page.<br /></div>';
+          You added the code &lt;?php init_Glossaire ?&gt; <u>manually</u>.<br><br>
+          Please remove it and validate the Configuration page.<br></div>';
      return;
   }
-    
+
     if ($alreadyMod !== false) {
         if ($desactiv == 'on') {
             $contenuMod = str_replace($code_mod, $code, $contenu); // désactivation
@@ -295,12 +295,12 @@ function GlossActivation($template, $desactiv = '') {
         $tpl_state = 1;
         fclose($t);
     }
-    
+
     // création sauvegarde .bak
     $sauv =fopen($fich_sauv,'w');
     fwrite($sauv,$contenu);
     fclose($sauv);
-    
+
     //Ecriture - remplace </head> par </head>< ? php init_Glossaire ? > ou l'inverse si désactivation
     $t2=@fopen($fich,'w+');
     fwrite($t2,$contenuMod);
@@ -310,7 +310,7 @@ function GlossActivation($template, $desactiv = '') {
 function checkActivation($template) {
   global $pth, $plugin_state, $desactiv;
     $fich = $pth['folder']['templates'].$template.'/template.htm';
-    $init_code = '<?php init_Glossaire(); ?>';    
+    $init_code = '<?php init_Glossaire(); ?>';
 
     if (!$t = @fopen($fich,'r')) {
         return;

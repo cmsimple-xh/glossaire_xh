@@ -13,7 +13,7 @@
  * @license    GNU GPLv3 - http://www.gnu.org/licenses/gpl-3.0.en.html
  * ==================================================================
  */
-header("Content-type: text/css; charset=iso-8859-1");   //pour la compatibilitÈ avec FireFox et autre nav non css dyn
+header("Content-type: text/css; charset=iso-8859-1");   //pour la compatibilit√© avec FireFox et autre nav non css dyn
 header("Pragma: no-cache", false);
 
 define("CHEMIN", "../../../");
@@ -141,7 +141,7 @@ float: right;
     box-shadow: none !important;
     }
     .larg1, .larg2 {
-    width: 45%; /* 32% => dÈfinitions sur 3 colonnes */
+    width: 45%; /* 32% => d√©finitions sur 3 colonnes */
     float: left;
     }
     .pp h4 {
