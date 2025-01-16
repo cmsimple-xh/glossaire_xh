@@ -13,7 +13,7 @@
  * ==================================================================
  */
 
-Pour IE <=11 pour validation de la suppression de mots, admin Glossaire, liste mots.
+/*Pour IE <=11 pour validation de la suppression de mots, admin Glossaire, liste mots.
 IE ne gérant pas l'attribut "form=id_du_form" (html5)
 Les éléments extérieurs au formulaire y sont temporairement inclus puis la validation effectuée.
 */
